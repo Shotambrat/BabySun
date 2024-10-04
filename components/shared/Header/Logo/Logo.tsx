@@ -10,6 +10,7 @@ export const Logo = ({ className }: Props) => {
   return (
     <div className={cn("h-full w-auto",className)}>
       <Image
+      quality={100}
        src='/svg/logo/babysun-logo.svg'
        width={1000}
        height={1000}
