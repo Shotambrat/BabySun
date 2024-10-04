@@ -1,11 +1,12 @@
-"use client"
-import React, { useState } from 'react';
-import { Button } from '@/components/ui';
-import { cn } from '@/lib/utils';
-import { X, Menu } from 'lucide-react'; // for icons
-import { Dialog, DialogOverlay, DialogContent, DialogClose } from '@/components/ui';
-import { LanguageSwitcher } from './LanguageSwitcher'; // Assuming this already exists
-import { useTranslations } from 'next-intl';
+"use client";
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ChevronRight, X, Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetClose, SheetTrigger } from "@/components/ui"; // Используем Sheet компоненты
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
+import { cn } from "@/lib/utils";
+import { Request } from "../../Request/Request";
 
 interface Props {
   className?: string;
@@ -13,60 +14,58 @@ interface Props {
 
 export const Tools = ({ className }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const t = useTranslations('Headers.Navigation');
-  
+  const t = useTranslations("Headers.Navigation");
+
   const navigationItems = [
-    { title: t('course'), href: '/course' },
-    { title: t('teachers'), href: '/teachers' },
-    { title: t('reviews'), href: '/reviews' },
-    { title: t('education'), href: '/education' },
-    { title: t('gallery'), href: '/gallery' },
+    { title: t("course"), href: "/course" },
+    { title: t("teachers"), href: "/teachers" },
+    { title: t("reviews"), href: "/reviews" },
+    { title: t("education"), href: "/education" },
+    { title: t("gallery"), href: "/gallery" },
   ];
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   return (
-    <div className={cn(className)}>
-      {/* Записаться button */}
-      <Button className="rounded-full lgx:px-12 font-semibold">
-        Записаться
-      </Button>
-      
+    <div className={cn("flex items-center", className)}>
+
       {/* Burger Menu Icon */}
-      <Button variant="ghost" className="ml-4" onClick={toggleMenu}>
-        <Menu size={24} />
-      </Button>
+      <div className="lgx:hidden">
 
-      {/* Sidebar Menu */}
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogOverlay className="fixed inset-0 bg-black bg-opacity-30" />
-        <DialogContent className="fixed top-0 left-0 h-full w-[250px] bg-white p-6 shadow-lg">
-          {/* Close button */}
-          <DialogClose asChild>
-            <button className="absolute top-4 right-4" onClick={toggleMenu}>
-              <X size={24} />
-            </button>
-          </DialogClose>
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        <SheetTrigger asChild>
+          <Button variant="ghost" className="ml-4">
+            <Menu size={24} />
+          </Button>
+        </SheetTrigger>
 
-          {/* Navigation */}
-          <nav className="flex flex-col space-y-4 mt-10">
+        <SheetContent position="right" size="lg" className="h-full p-6">
+          {/* Header with Close Button */}
+          <div className="flex justify-between items-center mb-6">
+            <SheetClose asChild></SheetClose>
+          </div>
+
+          {/* Navigation items */}
+          <nav className="flex flex-col space-y-4">
             {navigationItems.map((item, index) => (
-              <a key={index} href={item.href} className="hover:text-neutral-400 text-lg font-semibold transition-all duration-300">
-                {item.title}
-              </a>
+              <div
+                key={index}
+                className="flex items-center justify-between py-4 border-b border-neutral-200"
+              >
+                <a
+                  href={item.href}
+                  className="hover:text-neutral-400 text-lg font-semibold transition-all duration-300"
+                >
+                  {item.title}
+                </a>
+                <ChevronRight className="text-gray-400" />
+              </div>
             ))}
           </nav>
-
-          {/* LanguageSwitcher inside menu */}
-          <div className="mt-10">
+          <div className="w-full flex justify-between items-center mt-8">
             <LanguageSwitcher />
+            <Request />
           </div>
-        </DialogContent>
-      </Dialog>
-
-      {/* LanguageSwitcher inside Tools */}
-      <div className="ml-4">
-        <LanguageSwitcher />
+        </SheetContent>
+      </Sheet>
       </div>
     </div>
   );

@@ -13,3 +13,4 @@ export { Toast } from "./toast";
 export { Toaster } from "./toaster";
 export { Button } from "./button";
 export {Popover, PopoverContent, PopoverTrigger} from "./popover";
+export {Sheet, SheetContent, SheetClose, SheetTrigger} from "./sheet";

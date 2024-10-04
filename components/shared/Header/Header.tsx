@@ -10,7 +10,7 @@ interface Props {
 
 export const Header = ({ className }: Props) => {
   return (
-    <div className={cn("w-full px-4",className)}>
+    <div className={cn("w-full px-4 border-b border-neutral-300",className)}>
       <div className='w-full max-w-[1500px] flex justify-between items-center h-[60px] mdx:h-[70px] py-2 mx-auto'>
         <Logo />
         <Navigation className='max-lgx:hidden w-full max-w-[700px]' />
