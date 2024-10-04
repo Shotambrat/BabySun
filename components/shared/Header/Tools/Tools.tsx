@@ -26,6 +26,7 @@ export const Tools = ({ className }: Props) => {
 
   return (
     <div className={cn("flex items-center", className)}>
+    <Request className="max-mdx:hidden" />
 
       {/* Burger Menu Icon */}
       <div className="lgx:hidden">

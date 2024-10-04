@@ -8,6 +8,10 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+	height: {
+		screen70: "calc(100vh - 70px)", // Высота экрана минус 70px
+        screen60: "calc(100vh - 60px)",
+	},
 	screens: {
 		'sm': '320px',
 		'smx': '360px',
