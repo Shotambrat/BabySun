@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input"; // Используем для полей ввода
-import { Dialog, DialogTrigger, DialogContent, DialogClose, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-// import { X } from "lucide-react";
+import { Loader2, X } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
+import axios from "axios";
+import { Response } from './Response';
 
 interface Props {
   className?: string;
@@ -12,43 +14,100 @@ interface Props {
 
 export const Request = ({ className }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [responseStatus, setResponseStatus] = useState<'success' | 'error' | null>(null);
+  const [formData, setFormData] = useState({ name: '', phone: '', education: '' });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios.post("/api/submit-form", formData); // Замените на свой API путь
+      if (response.status === 200) {
+        setResponseStatus('success');
+        setIsOpen(false);
+      } else {
+        setResponseStatus('error');
+      }
+    } catch (err) {
+      setResponseStatus('error');
+      console.log(err);
+    } finally {
+      setIsLoading(false); // Остановить лоадер
+    }
+  };
 
   return (
-    <div className={cn(className)}>
+    <div>
       {/* Кнопка "Записаться", открывающая модальное окно */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
-          <Button className="rounded-full lgx:px-12 font-semibold">
+          <Button className={cn("rounded-full lgx:px-12 py-3 font-semibold", className)}>
             Записаться
           </Button>
         </DialogTrigger>
 
-        <DialogContent className="max-w-[360px] py-6 px-4 bg-white shadow-lg rounded-lg">
-          {/* Header с заголовком и кнопкой закрытия */}
+        <DialogContent className="max-mdx:max-w-[360px] msx-w-[430px] px-6 py-6 max-mdx:px-4 bg-white shadow-lg rounded-lg">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Запись на курс</DialogTitle>
-            <DialogClose asChild>
-              {/* <button className="absolute top-4 right-4">
-                <X size={24} />
-              </button> */}
-            </DialogClose>
+            <DialogTitle className="max-mdx:text-2xl text-3xl font-bold">Запись на курс</DialogTitle>
+            <button className="absolute top-4 right-4" onClick={() => setIsOpen(false)} aria-label="Close modal">
+              <X size={24} />
+            </button>
           </DialogHeader>
 
-          {/* Форма внутри модального окна */}
           <div className="space-y-4 mt-4">
-            <Input placeholder="Имя" className="py-8 px-3 bg-[#F8F8F8] text-neutral-400 text-lg  rounded-md" />
-            <Input placeholder="Контактный телефон" className="py-8 px-3 bg-[#F8F8F8] text-neutral-400 text-lg  rounded-md" />
-            <Input placeholder="Медицинское образование" className="py-8 px-3 bg-[#F8F8F8] text-neutral-400 text-lg  rounded-md" />
+            <Input 
+              name="name" 
+              placeholder="Имя" 
+              className="py-6 px-3 bg-[#F8F8F8] text-black font-semibold text-lg rounded-2xl" 
+              onChange={handleInputChange}
+              value={formData.name}
+            />
+            <Input 
+              name="phone" 
+              placeholder="Контактный телефон" 
+              className="py-6 px-3 bg-[#F8F8F8] text-neutral-400 font-semibold text-lg rounded-md" 
+              onChange={handleInputChange}
+              value={formData.phone}
+            />
+            <Input 
+              name="education" 
+              placeholder="Медицинское образование" 
+              className="py-6 px-3 bg-[#F8F8F8] text-neutral-400 font-semibold text-lg rounded-md" 
+              onChange={handleInputChange}
+              value={formData.education}
+            />
           </div>
 
-          {/* Кнопка отправки */}
-          <div className="mt-6">
-            <Button className="rounded-full px-8 py-7 bg-blue-500 hover:bg-blue-600 text-white font-semibold">
-              Отправить заявку
+          {/* Лоадер и кнопка отправки */}
+          <div className="mt-4">
+            <Button 
+              className="rounded-full max-mdx:w-full px-8 py-4 text-lg bg-blue-500 hover:bg-blue-600 text-white font-semibold" 
+              onClick={handleSubmit}
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <div className="flex items-center space-x-2">
+                  <Loader2 className="animate-spin" size={25} /> {/* Иконка с анимацией вращения */}
+                  <span>Ждите, пожалуйста</span>
+                </div>
+              ) : 'Отправить заявку'}
             </Button>
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* Модальное окно успешного ответа или ошибки */}
+      {responseStatus && (
+        <Response 
+          status={responseStatus} 
+          onClose={() => setResponseStatus(null)}
+        />
+      )}
     </div>
   );
 };
