@@ -26,7 +26,7 @@ export const Tools = ({ className }: Props) => {
 
   return (
     <div className={cn("flex items-center", className)}>
-      <div className="flex gap-4">
+      <div className="flex gap-4 items-center">
         <LanguageSwitcher className="max-xl:hidden" />
         <Request className="max-mdx:hidden" />
       </div>

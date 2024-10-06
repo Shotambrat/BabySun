@@ -1,4 +1,4 @@
-export { Accordion } from "./accordion";
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./accordion";
 export { AlertDialog } from "./alert-dialog";
 export { AspectRatio } from "./aspect-ratio";
 export { Card } from "./card";

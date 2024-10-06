@@ -70,14 +70,14 @@ export const Request = ({ className }: Props) => {
             <Input 
               name="phone" 
               placeholder="Контактный телефон" 
-              className="py-6 px-3 bg-[#F8F8F8] text-neutral-400 font-semibold text-lg rounded-md" 
+              className="py-6 px-3 bg-[#F8F8F8] text-black font-semibold text-lg rounded-md" 
               onChange={handleInputChange}
               value={formData.phone}
             />
             <Input 
               name="education" 
               placeholder="Медицинское образование" 
-              className="py-6 px-3 bg-[#F8F8F8] text-neutral-400 font-semibold text-lg rounded-md" 
+              className="py-6 px-3 bg-[#F8F8F8] text-black font-semibold text-lg rounded-md" 
               onChange={handleInputChange}
               value={formData.education}
             />
