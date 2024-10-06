@@ -11,36 +11,23 @@ interface Props {
 export const AccordeonItem = ({ title, description, className }: Props) => {
   const [isOpen, setIsOpen] = useState(false); // Состояние для управления открытием аккордеона
   const contentRef = useRef<HTMLDivElement | null>(null); // Реф для анимации контента
-  const accordionRef = useRef<HTMLDivElement | null>(null); // Реф для управления z-index всего аккордеона
 
   useEffect(() => {
     if (contentRef.current) {
       if (isOpen) {
-        // Анимация открытия контента
+        // Анимация открытия, чтобы расширение происходило вниз
         gsap.to(contentRef.current, {
           height: "auto",
           duration: 0.6,
           ease: "power3.inOut",
-          transformOrigin: "top",
-        });
-
-        // Увеличиваем z-index при открытии
-        gsap.to(accordionRef.current, {
-          zIndex: 9999, // Ставим приоритетное значение z-index
-          duration: 0,
+          transformOrigin: "top", // Позиционирование открытия сверху
         });
       } else {
-        // Анимация закрытия контента
+        // Анимация закрытия
         gsap.to(contentRef.current, {
           height: 0,
           duration: 0.6,
           ease: "power3.inOut",
-        });
-
-        // Уменьшаем z-index после закрытия
-        gsap.to(accordionRef.current, {
-          zIndex: 1, // Возвращаем z-index обратно
-          delay: 0.6, // Задержка, чтобы z-index изменился после завершения анимации закрытия
         });
       }
     }
@@ -48,9 +35,9 @@ export const AccordeonItem = ({ title, description, className }: Props) => {
 
   return (
     <div
-      ref={accordionRef}
       className={cn(
-        "min-w-[310px] max-w-[360px] p-4 bg-white rounded-xl transition-all duration-300 flex flex-col shadow-custom relative z-0",
+        "min-w-[310px] z-0 max-w-[360px] p-4 bg-white rounded-xl transition-all duration-300 flex flex-col shadow-custom relative",
+        {"z-[9999]": isOpen},
         className
       )}
     >
@@ -93,7 +80,7 @@ export const AccordeonItem = ({ title, description, className }: Props) => {
 
       <div
         ref={contentRef}
-        className={`overflow-hidden relative space-y-4 z-0 ${isOpen ? "mt-4" : ""}`}
+        className={`overflow-hidden z-0 space-y-4 ${isOpen ? "mt-4" : ""}`}
         style={{ height: 0, transformOrigin: "top" }} // Начальная высота 0 и transformOrigin для роста вниз
       >
         <hr />

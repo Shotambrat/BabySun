@@ -2,7 +2,7 @@ export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./
 export { AlertDialog } from "./alert-dialog";
 export { AspectRatio } from "./aspect-ratio";
 export { Card } from "./card";
-export { Carousel } from "./carousel";
+export { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./carousel";
 export { Dialog, DialogOverlay, DialogContent, DialogTitle, DialogDescription, DialogClose } from "./dialog";
 export { Drawer } from "./drawer";
 export { Form } from "./form";

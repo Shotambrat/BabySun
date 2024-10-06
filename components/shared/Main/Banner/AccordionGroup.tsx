@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import { gsap } from "gsap";
 import { cn } from "@lib/utils";
 import { AccordeonItem } from "./AccordeonItem";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui";
 
 interface Props {
   className?: string;
@@ -47,37 +47,54 @@ export const AccordionGroup = ({ className }: Props) => {
   ];
 
   return (
-    <div
-      ref={radiusRef}
-      className={cn(
-        "w-full h-[500px] rounded-t-full relative ",
-        { "opacity-0": !loading },
-        className
-      )}
-    >
-      {items.map((item, index) => {
-        const angleInRadians = (item.angle * Math.PI) / 180;
-        const x = radius + radius * Math.cos(angleInRadians);
-        const y = radius - radius * Math.sin(angleInRadians);
+    <div className="w-full">
+      <div
+        ref={radiusRef}
+        className={cn(
+          "w-full  h-[500px] relative max-lgx:hidden",
+          { "opacity-0": !loading },
+          className
+        )}
+      >
+        {items.map((item, index) => {
+          const angleInRadians = (item.angle * Math.PI) / 180;
+          const x = radius + radius * Math.cos(angleInRadians);
+          const y = radius - radius * Math.sin(angleInRadians);
 
-        return (
-          <div
-            key={index}
-            className="absolute"
-            style={{
-              left: `${x}px`,
-              top: `${y}px`,
-              transform: "translate(-50%, 0)", // Держим верхнюю часть элемента на месте
-            }}
-          >
-            <AccordeonItem
-              title={item.title}
-              description={item.description}
-              className="max-w-[200px]"
-            />
-          </div>
-        );
-      })}
+          return (
+            <div
+              key={index}
+              className="absolute"
+              style={{
+                left: `${x}px`,
+                top: `${y}px`,
+                transform: "translate(-50%, 0)", // Держим верхнюю часть элемента на месте
+              }}
+            >
+              <AccordeonItem
+                title={item.title}
+                description={item.description}
+                className="max-w-[200px]"
+              />
+            </div>
+          );
+        })}
+      </div>
+      <div className="w-full relative lgx:hidden">
+      <Carousel className="w-full max-w-sm">
+      <CarouselContent className="-ml-1">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index} className="pl-1 sm:basis-1/2 smx:basis-1/3">
+            <div className="p-1">
+                  <span className="text-2xl font-semibold">{index + 1}</span>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+      </div>
     </div>
   );
 };
