@@ -25,16 +25,16 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: any; // Локаль может быть необязательной
+  params: { locale?: string }; // Локаль может быть строкой или неопределенной
 }>) {
   // Устанавливаем локаль для запроса, используя значение по умолчанию 'ru'
-  const locale = params?.locale ?? 'ru'; // Убираем явное указание типа "string"
+  const locale = params?.locale ?? 'ru'; // Присваиваем локаль или используем значение по умолчанию
 
   // Устанавливаем локаль для запроса
   unstable_setRequestLocale(locale);
 
   // Получаем сообщения для текущей локали
-  const messages = await getMessages(locale);
+  const messages = await getMessages({ locale }); // Передаем объект с локалью
 
   return (
     <html lang={locale}>
@@ -48,8 +48,4 @@ export default async function RootLayout({
       </body>
     </html>
   );
-}
-
-export async function generateStaticParams() {
-  return [{ locale: 'ru' }, { locale: 'uz' }]; // Генерация статических параметров для локалей
 }
