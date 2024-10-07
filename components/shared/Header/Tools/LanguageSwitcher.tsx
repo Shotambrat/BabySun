@@ -12,7 +12,6 @@ interface Props {
 
 export const LanguageSwitcher = ({ className }: Props) => {
   const availableLocales = ["uz", "ru"];
-  const pathname = usePathname(); // Получаем текущий путь
   const router = useRouter(); // Получаем роутер для навигации
   const [locale, setLocale] = useState("ru"); // Локаль по умолчанию "ru"
 
