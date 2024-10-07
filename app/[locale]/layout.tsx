@@ -31,7 +31,7 @@ export default async function RootLayout({
   unstable_setRequestLocale(params.locale);
 
   // Получаем сообщения для текущей локали
-  const messages = await getMessages();
+  const messages = await getMessages(params.locale);
 
   return (
     <html lang={params.locale}>

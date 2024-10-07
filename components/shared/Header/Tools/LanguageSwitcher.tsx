@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { usePathname, Link } from "@/i18n/routing";
+import { usePathname, useRouter } from "next/navigation"; // Подключаем useRouter для навигации
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui";
@@ -10,26 +10,33 @@ interface Props {
   className?: string;
 }
 
-export const LanguageSwitcher = ({className}: Props) => {
+export const LanguageSwitcher = ({ className }: Props) => {
   const availableLocales = ["uz", "ru"];
-  const pathname = usePathname();
-  const [locale, setLocale] = useState("ru"); // Default locale to "ru"
+  const pathname = usePathname(); // Получаем текущий путь
+  const router = useRouter(); // Получаем роутер для навигации
+  const [locale, setLocale] = useState("ru"); // Локаль по умолчанию "ru"
 
-  // Function to extract locale from the URL (e.g., /uz/path or /ru/path)
+  // Функция для извлечения локали из URL (например, /uz/path или /ru/path)
   const extractLocaleFromPath = () => {
     if (typeof window !== "undefined") {
-      const path = window.location.pathname.split("/")[1]; // Get the first part of the path
+      const path = window.location.pathname.split("/")[1]; // Получаем первую часть пути
       if (availableLocales.includes(path)) {
-        return path; // If the path is a locale (e.g., "uz" or "ru"), return it
+        return path; // Если путь соответствует локали (например, "uz" или "ru"), возвращаем ее
       }
     }
-    return "ru"; // Default to "ru" if no locale is found
+    return "ru"; // Возвращаем "ru" по умолчанию, если локаль не найдена
   };
 
   useEffect(() => {
     const detectedLocale = extractLocaleFromPath();
-    setLocale(detectedLocale); // Set the locale from the URL
+    setLocale(detectedLocale); // Устанавливаем локаль из URL
   }, []);
+
+  // Функция для изменения языка и обновления URL
+  const handleLocaleChange = (newLocale: string) => {
+    const currentPath = window.location.pathname.replace(/^\/(ru|uz)/, ""); // Удаляем текущий префикс локали
+    router.push(`/${newLocale}${currentPath}`); // Навигация с новой локалью
+  };
 
   return (
     <div className={cn(className)}>
@@ -46,17 +53,17 @@ export const LanguageSwitcher = ({className}: Props) => {
               alt="LanguageSwitcher Icon | World"
               className="h-6 w-6"
             />
-            {locale.toUpperCase() == "RU" ? "РУ" : "UZ"}
+            {locale.toUpperCase() === "RU" ? "РУ" : "UZ"}
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-4">
           <div className="flex flex-col gap-2">
             {availableLocales.map((lng: string) => (
-              <Link
+              <button
                 key={lng}
-                href={pathname}
+                onClick={() => handleLocaleChange(lng)} // Вызываем функцию изменения локали
                 className={`flex items-center gap-2 hover:font-semibold ${
-                  lng == locale && "font-semibold"
+                  lng === locale && "font-semibold"
                 }`}
               >
                 <Image
@@ -69,8 +76,8 @@ export const LanguageSwitcher = ({className}: Props) => {
                   height={16}
                   alt={`${lng} flag`}
                 />
-                {lng.toUpperCase() == "RU" ? "РУ" : "UZ"}
-              </Link>
+                {lng === "ru" ? "РУ" : "UZ"}
+              </button>
             ))}
           </div>
         </PopoverContent>
