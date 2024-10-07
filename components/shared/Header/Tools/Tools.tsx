@@ -40,7 +40,7 @@ export const Tools = ({ className }: Props) => {
             </Button>
           </SheetTrigger>
 
-          <SheetContent position="right" size="lg" className="h-full p-6">
+          <SheetContent className="h-full p-6">
             {/* Header with Close Button */}
             <div className="flex justify-between items-center mb-6">
               <SheetClose asChild></SheetClose>
