@@ -8,7 +8,7 @@ interface Props {
 
 export const Edu = ({ className }: Props) => {
   return (
-    <section className={cn("bg-[#F8FBFF] py-24", className)}>
+    <section id="education" className={cn("bg-[#F8FBFF] py-24", className)}>
       <div className="w-full max-w-[1500px] px-4 mx-auto flex gap-8 flex-col">
         <h3 className="text-3xl lg:text-4xl font-bold">Чему научат</h3>
         <div>

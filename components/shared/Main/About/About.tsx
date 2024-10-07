@@ -1,5 +1,6 @@
 import React from "react";
 import { cn } from "@lib/utils";
+import Image from "next/image";
 
 interface Props {
   className?: string;
@@ -7,9 +8,18 @@ interface Props {
 
 export const About = ({ className }: Props) => {
   return (
-    <section className={cn("bg-white py-24", className)}>
+    <section id="course" className={cn("bg-white py-24", className)}>
       <div className="w-full max-w-[1500px] px-4 mx-auto flex gap-8 max-lgx:flex-col">
-        <div className="flex-1"></div>
+        <div className="flex-1">
+            <Image
+            src={'/images/main/about/about.png'}
+            width={1000}
+            height={1000}
+            alt="About Image"
+            quality={100}
+            className="w-full"
+            />
+        </div>
         <div className="flex-1 space-y-4">
           <h2
             className="text-4xl mdx:text-5xl font-bold text-black lineHeight30"

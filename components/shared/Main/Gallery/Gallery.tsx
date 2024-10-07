@@ -9,7 +9,7 @@ interface Props {
 
 export const Gallery = ({ className }: Props) => {
   return (
-    <section className={cn("bg-white py-24",className)}>
+    <section id="gallery" className={cn("bg-white py-24",className)}>
         <div className="w-full max-w-[1500px] mx-auto px-4 flex flex-col gap-8">
             <h3 className='text-3xl lg:text-4xl font-bold'>
                 Галерея

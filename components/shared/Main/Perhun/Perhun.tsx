@@ -10,7 +10,7 @@ interface Props {
 
 export const Perhun = ({ className }: Props) => {
   return (
-    <section className={cn("bg-white py-24", className)}>
+    <section id="teachers" className={cn("bg-white py-24", className)}>
       <div className="w-full max-w-[1500px] px-4 mx-auto flex justify-center gap-8 max-lgx:flex-col">
         <div className="flex-1 flex items-center justify-center">
           <Image

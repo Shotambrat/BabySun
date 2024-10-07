@@ -96,7 +96,7 @@ const reviews = [
 
 export const Reviews = ({ className }: Props) => {
   return (
-    <section className={cn("bg-white py-24", className)}>
+    <section id="reviews" className={cn("bg-white py-24", className)}>
       <Carousel className="space-y-12">
         <h3 className="text-3xl lg:text-4xl font-bold px-4 w-full max-w-[1500px] mx-auto">
           Отзывы

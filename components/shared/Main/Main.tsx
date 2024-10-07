@@ -9,6 +9,7 @@ import { Reviews } from './Reviews/Reviews';
 import { Benefit } from './Benefit/Benefit';
 import { Gallery } from './Gallery/Gallery';
 import { Faq } from './Faq/Faq';
+import { Clock } from './Clock/Clock';
 
 interface Props {
   className?: string;
@@ -24,6 +25,7 @@ export const Main = ({ className }: Props) => {
         <Perhun />
         <Reviews />
         <Benefit />
+        <Clock />
         <Faq />
         <Gallery />
     </main>
