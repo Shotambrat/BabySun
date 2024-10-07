@@ -100,3 +100,19 @@ body {
     line-height: 45px !important;
   }
 }
+
+.icon-background {
+  position: absolute;
+  bottom: -100px;
+  right: -80px;
+  width: 400px; /* Adjust size as needed */
+  height: 400px; /* Adjust size as needed */
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 159, 227, 0.3),
+    rgba(0, 159, 227, 0) 70%
+  );
+  filter: blur(40px); /* Adds a soft glow effect */
+  opacity: 0.6;
+  pointer-events: none; /* Ensures it's not interactive */
+}
