@@ -32,7 +32,7 @@ export const Tools = ({ className }: Props) => {
       </div>
 
       {/* Burger Menu Icon */}
-      <div className="lgx:hidden">
+      <aside className="lgx:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" className="ml-4">
@@ -69,7 +69,7 @@ export const Tools = ({ className }: Props) => {
             </div>
           </SheetContent>
         </Sheet>
-      </div>
+      </aside>
     </div>
   );
 };

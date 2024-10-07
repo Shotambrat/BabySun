@@ -95,3 +95,8 @@ body {
   }
 }
 
+@media (max-width: 650px) {
+  .lineHeight30 {
+    line-height: 45px !important;
+  }
+}

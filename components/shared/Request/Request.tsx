@@ -10,9 +10,10 @@ import { Response } from './Response';
 
 interface Props {
   className?: string;
+  title?: string
 }
 
-export const Request = ({ className }: Props) => {
+export const Request = ({ className, title="Записаться" }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [responseStatus, setResponseStatus] = useState<'success' | 'error' | null>(null);
@@ -47,7 +48,7 @@ export const Request = ({ className }: Props) => {
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
           <Button className={cn("rounded-full lgx:px-12 py-3 font-semibold", className)}>
-            Записаться
+            {title}
           </Button>
         </DialogTrigger>
 

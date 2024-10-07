@@ -46,7 +46,7 @@ export const Response = ({ status, onClose, className }: Props) => {
             >
               {status == "success"
                 ? "Заявка отправлена!"
-                : "Что-то пошло не так :("}
+                : "Что-то пошло не так"}
             </DialogTitle>
             <DialogDescription className="text-lg text-center leading-6 ">
               {status == "success" ? (

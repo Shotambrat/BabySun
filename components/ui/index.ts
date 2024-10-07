@@ -3,7 +3,7 @@ export { AlertDialog } from "./alert-dialog";
 export { AspectRatio } from "./aspect-ratio";
 export { Card } from "./card";
 export { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./carousel";
-export { Dialog, DialogOverlay, DialogContent, DialogTitle, DialogDescription, DialogClose } from "./dialog";
+export { Dialog, DialogOverlay, DialogContent, DialogTitle, DialogDescription, DialogClose, DialogTrigger, DialogHeader } from "./dialog";
 export { Drawer } from "./drawer";
 export { Form } from "./form";
 export { Input } from "./input";

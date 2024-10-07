@@ -1,6 +1,11 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Banner } from './Banner/Banner';
+import { About } from './About/About';
+import { Edu } from './Edu/Edu';
+import { Plan } from './Plan/Plan';
+import { Perhun } from './Perhun/Perhun';
+import { Reviews } from './Reviews/Reviews';
 
 interface Props {
   className?: string;
@@ -8,8 +13,13 @@ interface Props {
 
 export const Main = ({ className }: Props) => {
   return (
-    <div className={cn(className)}>
+    <main className={cn(className)}>
         <Banner />
-    </div>
+        <About />
+        <Edu/>
+        <Plan />
+        <Perhun />
+        <Reviews />
+    </main>
   );
 };

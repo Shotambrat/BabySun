@@ -11,7 +11,7 @@ interface Props {
 export const Banner = ({ className }: Props) => {
 
   return (
-    <div className={cn("bg-[#F8FBFF] relative h-screen60 mdx:h-screen70 flex flex-col items-center py-24 justify-end", className)}>
+    <section className={cn("bg-[#F8FBFF] relative h-screen60 mdx:h-screen70 flex flex-col items-center py-16 lgx:py-24 justify-end", className)}>
       {/* Текстовый блок и кнопка */}
       <div className="relative w-full max-mdx:max-w-[320px] max-w-[450px] text-center">
         <h1 className="text-4xl mdx:text-5xl font-bold text-black" 
@@ -35,6 +35,6 @@ export const Banner = ({ className }: Props) => {
       <div className='lgx:absolute relative lgx:px-24 lgx:pb-24 h-full w-full flex inset-0'>
         <AccordionGroup className='h-full relative' />
       </div>
-    </div>
+    </section>
   );
 };
