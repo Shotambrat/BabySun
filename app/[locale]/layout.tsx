@@ -25,19 +25,22 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: any; // Локаль может быть необязательной
 }>) {
+  // Устанавливаем локаль для запроса, используя значение по умолчанию 'ru'
+  const locale = params?.locale ?? 'ru'; // Убираем явное указание типа "string"
+
   // Устанавливаем локаль для запроса
-  unstable_setRequestLocale(params.locale);
+  unstable_setRequestLocale(locale);
 
   // Получаем сообщения для текущей локали
-  const messages = await getMessages(params.locale);
+  const messages = await getMessages(locale);
 
   return (
-    <html lang={params.locale}>
+    <html lang={locale}>
       <body className={`${raleway.variable} antialiased`}>
         {/* Передаем сообщения клиенту через NextIntlClientProvider */}
-        <NextIntlClientProvider locale={params.locale} messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           {children}
           <Footer />
