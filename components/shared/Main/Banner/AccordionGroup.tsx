@@ -1,7 +1,5 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import { cn } from "@lib/utils";
-import { Loader2, X } from "lucide-react";
 import { AccordeonItem } from "./AccordeonItem";
 import {
   Carousel,
@@ -15,6 +13,7 @@ import {
   DialogTitle,
 } from "@/components/ui";
 import { Request } from "../../Request/Request";
+import { cn } from '@lib/utils';
 
 interface Props {
   className?: string;
@@ -24,7 +23,6 @@ export const AccordionGroup = ({ className }: Props) => {
   const radiusRef = useRef<HTMLDivElement | null>(null);
   const [radius, setRadius] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (radiusRef.current) {

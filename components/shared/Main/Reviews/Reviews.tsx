@@ -3,9 +3,7 @@ import { cn } from "@lib/utils";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  CarouselItem
 } from "@/components/ui";
 import { Link } from "@/i18n/routing";
 
@@ -105,7 +103,7 @@ export const Reviews = ({ className }: Props) => {
         </h3>
         <CarouselContent>
           {reviews.map((review, index) => (
-            <CarouselItem className="pl-1 mdx:basis-1/2 lgx:basis-1/3">
+            <CarouselItem key={index} className="pl-1 mdx:basis-1/2 lgx:basis-1/3">
               <div className="bg-[#F8FBFF] mx-2 p-8 h-[400px] rounded-2xl flex flex-col justify-between">
                 <div className="space-y-8">
                   <div>

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, X, Menu } from "lucide-react";
+import { ChevronRight, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetClose, SheetTrigger } from "@/components/ui"; // Используем Sheet компоненты
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";

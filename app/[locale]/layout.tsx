@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { Header } from "@/components/shared/Header";
+import { Footer } from "@/components/shared/Footer/Footer";
 import "./globals.css";
 
 // Подключение Google Fonts (Raleway)
@@ -39,6 +40,7 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={params.locale} messages={messages}>
           <Header />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from 'react';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'; 
-import { cn } from '@/lib/utils';
 
 interface AccordionProps {
   title: string;
