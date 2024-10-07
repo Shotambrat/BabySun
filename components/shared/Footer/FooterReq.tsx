@@ -1,12 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Loader2, X } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { cn } from "@/lib/utils";
 import axios from "axios";
 import { Response } from "../Request/Response";
+import { cn } from "@lib/utils";
 
 interface Props {
   className?: string;
@@ -41,7 +39,7 @@ export const FooterReq = ({ className }: Props) => {
   };
 
   return (
-    <div>
+    <section className={cn(className)}>
       {/* Кнопка "Записаться", открывающая модальное окно */}
       <div>
 
@@ -96,6 +94,6 @@ export const FooterReq = ({ className }: Props) => {
           onClose={() => setResponseStatus(null)}
         />
       )}
-    </div>
+    </section>
   );
 };
