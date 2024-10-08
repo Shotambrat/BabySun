@@ -40,7 +40,7 @@ export const Request = ({ className, title = "Записаться" }: Props) =>
         formData,
         {
           headers: {
-            "API-Key": "aFE~&#siAhCs9_NiJAoC)HM#y0V)!-klh0h-3.eR0_W.gA~gk", // Place your actual API Key here
+            "API-Key": "aFE~&#siAhCs9_Ni]AoC)HM#y0V)!-klh0h-3.eR0_W.gA~gk", // Place your actual API Key here
           },
         }
       ); // Замените на свой API путь
