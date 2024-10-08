@@ -31,7 +31,7 @@ export const FooterReq = ({ className }: Props) => {
         formData,
         {
           headers: {
-            "API-Key": "aFE~&#siAhCs9_Ni]AoC)HM#y0V)!-klh0h-3.eR0_W.gA~gk", // Place your actual API Key here
+            "API-Key": "aFE~&#siAhCs9_Ni]AoC)HMF#y0V)!-kIh0h-3.eR0_W.gA~gk", // Place your actual API Key here
           },
         }
       ); // Замените на свой API путь
