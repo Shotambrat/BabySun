@@ -57,7 +57,7 @@ export const Request = ({ className, title = "Записаться" }: Props) =>
       setIsLoading(false); // Остановить лоадер
     }
 
-    console.log()
+    console.log("Token", "aFE~&#siAhCs9_Ni]AoC)HMF#y0V)!-kIh0h-3.eR0_W.gA~gk")
   };
 
   return (
