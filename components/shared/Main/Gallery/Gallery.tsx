@@ -21,10 +21,10 @@ const photos = [
 ];
 
 export const Gallery = ({ className }: Props) => {
-  const t = useTranslations('Main.Gallery')
+  const t = useTranslations('Main.Gallery');
   const [visiblePhotos, setVisiblePhotos] = useState(6); // Show 6 photos by default on desktop
   const [isMobile, setIsMobile] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false); // Track if "Load More" was clicked
+  const [isExpanded, setIsExpanded] = useState(false); // Track if gallery is expanded
 
   useEffect(() => {
     const updateMedia = () => {
@@ -40,11 +40,16 @@ export const Gallery = ({ className }: Props) => {
     setVisiblePhotos(isMobile ? 3 : 6);
   }, [isMobile]);
 
-  const handleLoadMore = () => {
-    setIsExpanded(true);
-    setTimeout(() => {
-      setVisiblePhotos(photos.length); // Show all photos with a delay to allow animation
-    }, 300); // Timeout to sync with animation duration
+  const handleToggleGallery = () => {
+    if (isExpanded) {
+      // Collapse the gallery
+      setIsExpanded(false);
+      setVisiblePhotos(isMobile ? 3 : 6);
+    } else {
+      // Expand the gallery
+      setIsExpanded(true);
+      setVisiblePhotos(photos.length); // Show all photos
+    }
   };
 
   return (
@@ -72,13 +77,11 @@ export const Gallery = ({ className }: Props) => {
           </div>
         </PhotoProvider>
 
-        {visiblePhotos < photos.length && (
-          <div className="w-full flex items-center justify-center">
-            <Button onClick={handleLoadMore} className="px-8 py-4 rounded-full">
-            {t('button')}
-            </Button>
-          </div>
-        )}
+        <div className="w-full flex items-center justify-center">
+          <Button onClick={handleToggleGallery} className="px-8 py-4 rounded-full">
+            {isExpanded ? t('collapseButton') : t('button')}
+          </Button>
+        </div>
       </div>
     </section>
   );

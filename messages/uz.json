@@ -105,7 +105,8 @@
     },
     "Gallery": {
       "title": "Galereya",
-      "button": "Ko'proq yuklash"
+      "button": "Ko'proq yuklash",
+      "collapseButton": "Qaytarish"
     },
     "Form": {
       "title": "Kursimiz ishtirokchisi bo'lish uchun anketani to'ldiring",
