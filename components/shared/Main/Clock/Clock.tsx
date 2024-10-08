@@ -48,7 +48,7 @@ export const Clock = ({ className }: Props) => {
       <div className="w-full max-w-[1500px] px-4 mx-auto flex flex-col items-center gap-12">
         {/* Top Section */}
         <div className="flex flex-col w-full gap-6">
-          <p className="text-xl lg:text-2xl">осталось мест: 25</p>
+          <p className="text-xl lg:text-2xl">осталось мест: 9</p>
           <h4 className="text-3xl lg:text-5xl font-bold">Успейте присоединиться!</h4>
           <Request className="bg-white hover:bg-white text-[#009FE3]" />
         </div>
