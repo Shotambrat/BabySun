@@ -45,6 +45,9 @@ export const AboutBS = ({ className }: Props) => {
       </div>
       <div className="absolute max-lgx:relative w-full max-w-[1550px] h-full left-1/2 transform -translate-x-1/2 px-4">
         <div className="space-y-6 w-full max-w-[500px]">
+            <h2 className="text-5xl font-bold max-mdx:mb-12">
+                {t('org')}
+            </h2>
           <h1 className="text-5xl font-bold">
             {t("title")} <span className="text-[#009FE3]">{t("subtile")}</span>
           </h1>

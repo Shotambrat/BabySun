@@ -103,7 +103,7 @@ export const AccordionGroup = ({ className }: Props) => {
                 {/* Обернем карточку в DialogTrigger */}
                 <Dialog>
                   <DialogTrigger asChild>
-                    <div className="p-4 rounded-2xl relative bg-white shadow-custom mx-1 cursor-pointer">
+                    <div className="p-4 rounded-2xl h-[75px] relative bg-white shadow-custom mx-1 cursor-pointer">
                       <h2
                         className="text-[#009FE3] text-sm font-semibold w-full max-w-[90%]"
                         style={{ lineHeight: "16px" }}

@@ -37,7 +37,7 @@ export const Edu = ({ className }: Props) => {
                   height={100}
                   quality={100}
                   alt={`Icon ${index + 1}`}
-                  className="mdx:h-8 mdx:w-8 h-12 w-12"
+                  className="mdx:h-full mdx:max-h-8 mdx:w-8 h-full max-h-12 w-12"
                 />
                 <p className="font-semibold text-xl">{point}</p>
               </div>
@@ -55,7 +55,7 @@ export const Edu = ({ className }: Props) => {
                   height={100}
                   quality={100}
                   alt={`Icon ${index + 4}`}
-                  className="mdx:h-8 mdx:w-8 h-12 w-12"
+                  className="mdx:h-full mdx:max-h-8 mdx:w-8 h-full max-h-12 w-12"
                 />
                 <p className="font-semibold text-xl">{point}</p>
               </div>

@@ -32,11 +32,11 @@ export const History = ({ className }: Props) => {
           <p className="text-lg font-medium w-full max-w-[500px] leading-6">
             {t("description")}
           </p>
-          <div>
+          {/* <div>
             <Button className="text-xl font-semibold text-white px-16 rounded-full py-4 bg-[#009FE3]">
               {t("licenses")}
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

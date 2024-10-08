@@ -10,7 +10,7 @@
   },
   "Main": {
     "Banner": {
-      "title": "SROT-terapiyasi bo'yicha ",
+      "title": "SHROT-terapiyasi bo'yicha ",
       "subtitle": "mutaxassis bo'ling",
       "Accordions": {
         "title1": "Amaliyot boshlashida yordam berish",
@@ -19,7 +19,7 @@
         "description2": "Treningni xalqaro miqyosda tan olingan Rossiyada birinchi sertifikatlangan PSSE instruktori Aleksandr Perxun olib boradi. Uning chuqur bilimlari va tajribasi Shrot texnikasini samarali yetkazish imkonini beradi.",
         "title3": "Skolioz va kifozni davolashning noyob usuli",
         "description3": "Kurs skolioz va kifozni tuzatishda samarali ekanini isbotlagan Shrot usulini chuqur o'rganishni taklif qiladi. Bu uslub umurtqa pog'onasini tekislash, nafas olishni tiklash va qomatni tik saqlashni yaxshilashga qaratilgan individual mashqlarga asoslanadi.",
-        "title4": "SROT-terapiya bo'yicha sertifikat",
+        "title4": "SHROT-terapiya bo'yicha sertifikat",
         "description4": "Kurs yakunida malakangizni tasdiqlovchi xalqaro sertifikat olasiz, bu sizga ushbu texnikadan foydalangan holda bemorlar bilan ishlash imkonini beradi."
       }
     },
@@ -80,7 +80,7 @@
     },
     "EnrollNow": {
       "title": "Qo'shilishga ulguring!",
-      "seatsLeft": "qolgan joylar: 25",
+      "seatsLeft": "qolgan joylar: 9",
       "days": "KUN",
       "hours": "SOAT",
       "minutes": "MINUT",
@@ -198,6 +198,7 @@
     }
   },
   "BabySun": {
+    "org": "Tashkilchi",
     "title": "BabySun",
     "subtile": "Klinikasi",
     "description": "BabySun klinikasi bolalar salomatligiga ixtisoslashgan yetakchi tibbiyot muassasasi hisoblanadi. Biz kasalliklarni diagnostika qilish va oldini olishdan tortib, murakkab jarrohlik aralashuvlarigacha bo'lgan keng qamrovli tibbiy xizmatlarni taklif etamiz. Bizning maqsadimiz – har bir bolaga zamonaviy metodikalar va dalillarga asoslangan tibbiyotga asoslangan sifatli tibbiy yordam ko'rsatishdir.",

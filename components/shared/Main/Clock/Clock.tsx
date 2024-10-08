@@ -59,14 +59,14 @@ export const Clock = ({ className }: Props) => {
           <hr className="border-t border-white/50" />
         </div>
         {/* Timer */}
-        <div className="flex justify-center items-center gap-4 text-center">
+        <div className="flex justify-center items-center max-mdx:gap-2 gap-4 text-center">
           {/* Days */}
           <div className="flex flex-col items-center">
             <div className="flex gap-1">
               {timeLeft.days.split("").map((digit, i) => (
                 <div
                   key={`day-${i}`}
-                  className="md:text-6xl text-3xl lg:text-[120px] leading-none"
+                  className="md:text-6xl text-5xl lg:text-[120px] leading-none"
                   style={{ fontFamily: "'Roboto', sans-serif" }}
                 >
                   {digit}
@@ -82,7 +82,7 @@ export const Clock = ({ className }: Props) => {
               {timeLeft.hours.split("").map((digit, i) => (
                 <div
                   key={`hour-${i}`}
-                  className="md:text-6xl text-3xl lg:text-[120px] leading-none"
+                  className="md:text-6xl text-5xl lg:text-[120px] leading-none"
                   style={{ fontFamily: "'Roboto', sans-serif" }}
                 >
                   {digit}
@@ -98,7 +98,7 @@ export const Clock = ({ className }: Props) => {
               {timeLeft.minutes.split("").map((digit, i) => (
                 <div
                   key={`minute-${i}`}
-                  className="md:text-6xl text-3xl lg:text-[120px] leading-none"
+                  className="md:text-6xl text-5xl lg:text-[120px] leading-none"
                   style={{ fontFamily: "'Roboto', sans-serif" }}
                 >
                   {digit}
@@ -114,7 +114,7 @@ export const Clock = ({ className }: Props) => {
               {timeLeft.seconds.split("").map((digit, i) => (
                 <div
                   key={`second-${i}`}
-                  className="md:text-6xl text-3xl lg:text-[120px] leading-none"
+                  className="md:text-6xl text-5xl lg:text-[120px] leading-none"
                   style={{ fontFamily: "'Roboto', sans-serif" }}
                 >
                   {digit}

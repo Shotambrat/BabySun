@@ -42,7 +42,7 @@
     "EducationPlan": {
       "title": "План обучения",
       "module": "Модуль",
-      "description": "Ta'lim ikki bosqichda o'tkaziladi: nazariy tayyorgarlik va bemorlar bilan intensiv amaliy ish. Barcha mashg'ulotlar Baby Sun klinikasida o'tkaziladi, bu esa ishtirokchilarga olingan bilimlarni darhol amalda qo'llash imkonini beradi.",
+      "description": "Обучение проходит в два этапа: теоретическая подготовка и интенсивная практическая работа с пациентами. Все занятия ведутся на базе клиники Baby Sun, что позволяет участникам сразу же применить полученные знания на практике.",
       "modules": [
         {
           "name": "ВВЕДЕНИЕ В МЕТОДИКУ ШРОТ",
@@ -78,7 +78,7 @@
     },
     "EnrollNow": {
       "title": "Успейте присоединиться!",
-      "seatsLeft": "осталось мест: 25",
+      "seatsLeft": "осталось мест: 9",
       "days": "ДНИ",
       "hours": "ЧАСЫ",
       "minutes": "МИНУТЫ",
@@ -196,6 +196,7 @@
     }
   },
   "BabySun": {
+    "org": "Организатор",
     "title": "Клиника",
     "subtile": "BabySun",
     "description": "Клиника BabySun является ведущим медицинским учреждением, специализирующимся на детском здоровье. Мы предлагаем широкий спектр медицинских услуг, начиная от диагностики и профилактики заболеваний до сложных хирургических вмешательств. Наша цель — обеспечить каждому ребенку качественное медицинское обслуживание, основанное на современных методиках и доказательной медицине.",

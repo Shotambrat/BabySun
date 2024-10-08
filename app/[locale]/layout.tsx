@@ -20,20 +20,38 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale?: string };
 }>) {
-  const locale = params?.locale ?? 'ru';
 
   // Устанавливаем локаль для запроса
+  
+  // SEO и OG данные для узбекского и русского языков
+  const siteUrl = "https://baby-sun.uz";
+  
+  type Locales = 'ru' | 'uz';
+  
+  const seoData: Record<Locales, { title: string; description: string; imageUrl: string; canonicalUrl: string }> = {
+    ru: {
+      title: "Baby sun | Ташкент",
+      description: "Александр Перхун - специалист по ШРОТ-терапии, профессионал международного уровня",
+      imageUrl: `${siteUrl}/favicon.ico`,
+      canonicalUrl: `${siteUrl}/ru`,
+    },
+    uz: {
+      title: "Baby sun | Toshkent",
+      description: "Aleksandr Perxun - SHROT terapiyasi bo'yicha mutaxassis, xalqaro darajadagi professional",
+      imageUrl: `${siteUrl}/favicon.ico`,
+      canonicalUrl: `${siteUrl}/uz`,
+    }
+  };
+  
+  const locale: Locales = params?.locale === 'uz' ? 'uz' : 'ru'; // Определяем локаль как 'ru' или 'uz'
+  
+  const { title, description, imageUrl, canonicalUrl } = seoData[locale];
   unstable_setRequestLocale(locale);
 
   // Получаем сообщения для текущей локали
   const messages = await getMessages({ locale });
-
-  // Метаданные Open Graph и SEO
-  const siteUrl = "https://baby-sun.uz";  // Убедитесь, что URL правильный
-  const title = "Baby sun | Ташкент";
-  const description = "Александр Перхун - специалист по ШРОТ-терапии, профессионал международного уровня";
-  const imageUrl = `${siteUrl}/images/logo/babysun-logo.png`;  // Убедитесь, что логотип доступен по этому пути
-
+  
+  // Структурированные данные (schema.org)
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -60,13 +78,13 @@ export default async function RootLayout({
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Baby sun" />
-        <link rel="canonical" href={siteUrl} />
+        <link rel="canonical" href={canonicalUrl} />
 
         {/* Open Graph (OG) теги */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={siteUrl} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:image:width" content="1200" /> {/* Рекомендованные размеры */}
         <meta property="og:image:height" content="630" />
