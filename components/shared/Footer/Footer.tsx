@@ -18,8 +18,8 @@ export const Footer = ({ className }: Props) => {
           <div className="flex flex-col gap-8">
             <hr />
             <a
-              className="flex gap-4 items-center"
-              href={"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
+              className="flex max-mdx:hidden gap-4 items-center"
+              href={"https://www.instagram.com/babysun_nat_bolalarklinikasi/"}
             >
               <Image
                 src={"/svg/footer/inst-logo.svg"}
@@ -36,6 +36,20 @@ export const Footer = ({ className }: Props) => {
         <div className="flex-1">
           <FooterReq />
         </div>
+        <a
+          className="flex mdx:hidden gap-4 items-center"
+          href={"https://www.instagram.com/babysun_nat_bolalarklinikasi/"}
+        >
+          <Image
+            src={"/svg/footer/inst-logo.svg"}
+            width={100}
+            height={100}
+            quality={100}
+            alt="Instagram Icon"
+            className="w-8"
+          />
+          <p className="text-xl text-white font-semibold">Scolios Clinic</p>
+        </a>
       </div>
     </footer>
   );

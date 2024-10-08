@@ -17,7 +17,7 @@ export const Request = ({ className, title="Записаться" }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [responseStatus, setResponseStatus] = useState<'success' | 'error' | null>(null);
-  const [formData, setFormData] = useState({ name: '', phone: '', education: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', edu: '' });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -27,7 +27,7 @@ export const Request = ({ className, title="Записаться" }: Props) => {
   const handleSubmit = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.post("/api/submit-form", formData); // Замените на свой API путь
+      const response = await axios.post("https://baby-sun.uz/api/application", formData); // Замените на свой API путь
       if (response.status === 200) {
         setResponseStatus('success');
         setIsOpen(false);
@@ -80,7 +80,7 @@ export const Request = ({ className, title="Записаться" }: Props) => {
               placeholder="Медицинское образование" 
               className="py-6 px-3 bg-[#F8F8F8] text-black font-semibold text-lg rounded-md" 
               onChange={handleInputChange}
-              value={formData.education}
+              value={formData.edu}
             />
           </div>
 

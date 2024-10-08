@@ -39,7 +39,7 @@ export const Perhun = ({ className }: Props) => {
           </p>
           <div>
             <Link
-              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              href="https://yandex.ru/video/preview/4503682067895474518"
             >
               <Button className="rounded-full px-8 py-4">
                 Смотреть интервью

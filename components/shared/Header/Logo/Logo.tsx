@@ -16,7 +16,7 @@ export const Logo = ({ className }: Props) => {
         width={1000}
         height={1000}
         alt="Baby Sun Logo"
-        className="h-full w-auto"
+        className="h-[40px] w-auto"
       />
     </Link>
   );

@@ -12,7 +12,7 @@ interface Props {
 export const Banner = ({ className }: Props) => {
 
   return (
-    <section className={cn("bg-[#F8FBFF] relative h-screen60 mdx:h-screen70 z-0 flex flex-col items-center py-16 lgx:py-24 justify-end", className)}>
+    <section className={cn("bg-[#F8FBFF] relative h-screen60 mdx:h-screen70 z-0 flex flex-col items-center py-4 lgx:py-24 justify-end", className)}>
       {/* Текстовый блок и кнопка */}
       <div className="relative z-[999] w-full max-mdx:max-w-[320px] max-w-[450px] text-center">
         <h1 className="text-4xl mdx:text-5xl font-bold text-black" 
@@ -25,7 +25,7 @@ export const Banner = ({ className }: Props) => {
         <style jsx>{`
           @media (max-width: 650px) {
             h1 {
-              line-height: 45px !important;
+              line-height: 40px !important;
             }
           }
         `}</style>
