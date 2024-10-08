@@ -116,3 +116,23 @@ body {
   opacity: 0.6;
   pointer-events: none; /* Ensures it's not interactive */
 }
+
+/* Удаление скроллбара для всех браузеров */
+.no-scrollbar {
+  /* Удаление скроллбара для WebKit-браузеров (Chrome, Safari) */
+  -ms-overflow-style: none;  /* Удаление скроллбара для Internet Explorer и Edge */
+  scrollbar-width: none;     /* Удаление скроллбара для Firefox */
+}
+
+/* Удаление полосы прокрутки в WebKit-браузерах (Chrome, Safari) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.line-clamp-6 {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

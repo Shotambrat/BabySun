@@ -4,12 +4,14 @@ import { cn } from '@/lib/utils';
 import { Request } from '../../Request/Request'; 
 import { AccordionGroup } from './AccordionGroup';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   className?: string;
 }
 
 export const Banner = ({ className }: Props) => {
+  const t = useTranslations("")
 
   return (
     <section className={cn("bg-[#F8FBFF] relative h-screen60 mdx:h-screen70 z-0 flex flex-col items-center py-4 lgx:py-24 justify-end", className)}>
@@ -19,7 +21,7 @@ export const Banner = ({ className }: Props) => {
           style={{ lineHeight: '60px' }} 
           // Inline style for max screen width of 650px
         >
-          Станьте специалистом по <span className="text-[#25A8F5]">ШРОТ-терапии</span>
+          {t('Main.Banner.title')} <span className="text-[#25A8F5]">{t('Main.Banner.subtitle')}</span>
         </h1>
         {/* Медиазапрос для изменения line-height */}
         <style jsx>{`

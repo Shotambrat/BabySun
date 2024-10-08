@@ -13,6 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 import axios from "axios";
 import { Response } from "./Response";
+import { useTranslations } from "next-intl";
 
 interface Props {
   className?: string;
@@ -20,6 +21,7 @@ interface Props {
 }
 
 export const Request = ({ className, title = "Записаться" }: Props) => {
+  const t = useTranslations("")
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [responseStatus, setResponseStatus] = useState<
@@ -69,14 +71,14 @@ export const Request = ({ className, title = "Записаться" }: Props) =>
               className
             )}
           >
-            {title}
+            {title == "Записаться"? t('request') : title}
           </Button>
         </DialogTrigger>
 
         <DialogContent className="max-mdx:max-w-[360px] msx-w-[430px] px-6 py-6 max-mdx:px-4 bg-white shadow-lg rounded-lg">
           <DialogHeader>
             <DialogTitle className="max-mdx:text-2xl text-3xl font-bold">
-              Запись на курс
+              {t("Main.Form.titleModal")}
             </DialogTitle>
             <button
               className="absolute top-4 right-4"
@@ -90,21 +92,21 @@ export const Request = ({ className, title = "Записаться" }: Props) =>
           <div className="space-y-4 mt-4">
             <Input
               name="name"
-              placeholder="Имя"
+              placeholder={t("Main.Form.fields.name")}
               className="py-6 px-3 bg-[#F8F8F8] text-black font-semibold text-lg rounded-2xl"
               onChange={handleInputChange}
               value={formData.name}
             />
             <Input
               name="phone"
-              placeholder="Контактный телефон"
+              placeholder={t("Main.Form.fields.phone")}
               className="py-6 px-3 bg-[#F8F8F8] text-black font-semibold text-lg rounded-md"
               onChange={handleInputChange}
               value={formData.phone}
             />
             <Input
               name="edu"
-              placeholder="Медицинское образование"
+              placeholder={t("Main.Form.fields.education")}
               className="py-6 px-3 bg-[#F8F8F8] text-black font-semibold text-lg rounded-md"
               onChange={handleInputChange}
               value={formData.edu}
@@ -122,11 +124,9 @@ export const Request = ({ className, title = "Записаться" }: Props) =>
                 <div className="flex items-center space-x-2">
                   <Loader2 className="animate-spin" size={25} />{" "}
                   {/* Иконка с анимацией вращения */}
-                  <span>Ждите, пожалуйста</span>
+                  <span>{t("Main.Form.loading")}</span>
                 </div>
-              ) : (
-                "Отправить заявку"
-              )}
+              ) : `${t("Main.Form.submitButton")}`}
             </Button>
           </div>
         </DialogContent>

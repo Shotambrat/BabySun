@@ -10,6 +10,8 @@ import { Benefit } from './Benefit/Benefit';
 import { Gallery } from './Gallery/Gallery';
 import { Faq } from './Faq/Faq';
 import { Clock } from './Clock/Clock';
+import { AboutBS } from './BabySun/About';
+import { History } from './BabySun/History';
 
 interface Props {
   className?: string;
@@ -28,6 +30,8 @@ export const Main = ({ className }: Props) => {
         <Clock />
         <Faq />
         <Gallery />
+        <AboutBS />
+        <History />
     </main>
   );
 };

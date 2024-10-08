@@ -1,5 +1,4 @@
-import type { Metadata } from "next";
-import { Raleway } from "next/font/google"; // Импорт шрифта Raleway
+import { Raleway } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { unstable_setRequestLocale } from 'next-intl/server';
@@ -14,33 +13,26 @@ const raleway = Raleway({
   variable: "--font-raleway",
 });
 
-// Мета-данные для страницы
-export const metadata: Metadata = {
-  title: "Baby sun",
-  description: "Baby sun | Ташкент",
-};
-
 export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale?: string }; // Локаль может быть строкой или неопределенной
+  params: { locale?: string };
 }>) {
-  // Устанавливаем локаль для запроса, используя значение по умолчанию 'ru'
-  const locale = params?.locale ?? 'ru'; // Присваиваем локаль или используем значение по умолчанию
+  const locale = params?.locale ?? 'ru';
 
   // Устанавливаем локаль для запроса
   unstable_setRequestLocale(locale);
 
   // Получаем сообщения для текущей локали
-  const messages = await getMessages({ locale }); // Передаем объект с локалью
+  const messages = await getMessages({ locale });
 
-  // Define Open Graph and SEO metadata values
-  const siteUrl = "https://baby-sun.uz";
+  // Метаданные Open Graph и SEO
+  const siteUrl = "https://baby-sun.uz";  // Убедитесь, что URL правильный
   const title = "Baby sun | Ташкент";
   const description = "Александр Перхун - специалист по ШРОТ-терапии, профессионал международного уровня";
-  const imageUrl = `${siteUrl}/images/logo/babysun-logo.png`; // Example image for social sharing
+  const imageUrl = `${siteUrl}/images/logo/babysun-logo.png`;  // Убедитесь, что логотип доступен по этому пути
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -62,8 +54,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        {/* Basic SEO Tags */}
-        <title>{title}</title>
+        {/* Базовые SEO-теги */}
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
@@ -71,24 +62,28 @@ export default async function RootLayout({
         <meta name="author" content="Baby sun" />
         <link rel="canonical" href={siteUrl} />
 
-        {/* Open Graph (OG) Meta Tags */}
+        {/* Open Graph (OG) теги */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
         <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:width" content="1200" /> {/* Рекомендованные размеры */}
+        <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Baby sun" />
 
-        {/* Twitter Card Meta Tags */}
+        {/* Теги для Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={imageUrl} />
 
-        {/* Structured Data (Schema.org) */}
+        {/* Структурированные данные (Schema.org) */}
         <script type="application/ld+json">
           {JSON.stringify(schemaData)}
         </script>
+
+        <title>{title}</title>
       </head>
       <body className={`${raleway.variable} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>

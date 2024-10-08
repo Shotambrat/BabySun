@@ -1,3 +1,212 @@
 {
-    "hello": "hello"
+  "Headers": {
+    "Navigation": {
+      "course": "Kurs",
+      "teachers": "Muallim",
+      "reviews": "Izohlar",
+      "education": "Ta'lim",
+      "gallery": "Galereya"
+    }
+  },
+  "Main": {
+    "Banner": {
+      "title": "SROT-terapiyasi bo'yicha ",
+      "subtitle": "mutaxassis bo'ling",
+      "Accordions": {
+        "title1": "Amaliyot boshlashida yordam berish",
+        "description1": "Ishtirokchilarga amaliyot boshlashida yordam beramiz, jumladan, metodik tavsiyalar va bemorlar bilan ishlash misollarini.",
+        "title2": "Xalqaro darajadagi muallim",
+        "description2": "Treningni xalqaro miqyosda tan olingan Rossiyada birinchi sertifikatlangan PSSE instruktori Aleksandr Perxun olib boradi. Uning chuqur bilimlari va tajribasi Shrot texnikasini samarali yetkazish imkonini beradi.",
+        "title3": "Skolioz va kifozni davolashning noyob usuli",
+        "description3": "Kurs skolioz va kifozni tuzatishda samarali ekanini isbotlagan Shrot usulini chuqur o'rganishni taklif qiladi. Bu uslub umurtqa pog'onasini tekislash, nafas olishni tiklash va qomatni tik saqlashni yaxshilashga qaratilgan individual mashqlarga asoslanadi.",
+        "title4": "SROT-terapiya bo'yicha sertifikat",
+        "description4": "Kurs yakunida malakangizni tasdiqlovchi xalqaro sertifikat olasiz, bu sizga ushbu texnikadan foydalangan holda bemorlar bilan ishlash imkonini beradi."
+      }
+    },
+    "About": {
+      "title": "SHROT-terapiya",
+      "subtitle": "kursi haqida",
+      "description": "Shrot usulidan foydalangan holda trening o'murtqa deformatsiyalari, jumladan, skolyoz, kifoz va lordoz bilan og'rigan bemorlarni reabilitatsiya qilishga qaratilgan. Kurs nazariy va amaliy mashg'ulotlardan iborat, bu sizga umurtqa egriliklari fiziologiyasini va ularni tuzatish usullarini chuqur o'rganish imkonini beradi. Shrot usuli butun dunyoda skoliozni jarrohliksiz samarali davolash usuli sifatida tan olingan va dasturimiz uni amalda o'zlashtirishingizga yordam beradi."
+    },
+    "Learn": {
+      "title": "Nimani o'rgatishadi",
+      "points": [
+        "Skolioz va boshqa umurtqa deformatsiyalari diagnostikasiga",
+        "Bemorlar uchun mashqlarni individual tanlashga",
+        "Nafas olish texnikasi yordamida qomatni tik saqlashni tuzatishga",
+        "Bolalar va kattalardagi skoliozning oldini olish va davolash uchun Shrot usulidan foydalanishga",
+        "Bemorni tashxis qo'yishdan muvaffaqiyatli tiklanishigacha boshqarishga"
+      ]
+    },
+    "EducationPlan": {
+      "title": "Ta'lim rejasi",
+      "module": "Modul",
+      "description": "Ta'lim ikki bosqichda o'tkaziladi: nazariy tayyorgarlik va bemorlar bilan intensiv amaliy ish. Barcha mashg'ulotlar Baby Sun klinikasida o'tkaziladi, bu esa ishtirokchilarga olingan bilimlarni darhol amalda qo'llash imkonini beradi.",
+      "modules": [
+        {
+          "name": "SHROT USULIGA KIRISH",
+          "description": "Umurtqaning anatomiyasi va fiziologiyasi. Skoliozni tashxislashning nazariy jihatlari."
+        },
+        {
+          "name": "AMALIY QISM",
+          "description": "Bemorlarga individual yondashuv. Tuzatish mashqlarini yaratish."
+        },
+        {
+          "name": "QOMATNI TIK SAQLASH VA NAFAS OLISH BILAN ISHLASH",
+          "description": "Ko'zgu va boshqa yordamchi asboblardan foydalanish."
+        },
+        {
+          "name": "YAKUNIY SERTIFIKATLASH",
+          "description": "Amaliy ko'nikma va bilimlarni baholash."
+        }
+      ]
+    },
+    "Instructor": {
+      "name": "Aleksandr Perxun",
+      "description": "Sertifikatlangan PSSE instruktori (Schroth Method by Nikos Karavidas), fizioterapevt va Krasnodardagi \"Scolios clinic\" asoschisi. Uning markazi Rossiyaning janubidagi eng yirik markaz bo'lib, noyob Shrot texnikasi yordamida skoliozni davolashga ixtisoslashgan.",
+      "button": "Intervyuni tomosha qilish"
+    },
+    "Testimonials": {
+      "title": "Izohlar"
+    },
+    "WhatYouGet": {
+      "title": "Nima olasiz",
+      "points": [
+        "Xalqaro miqyosda tan olingan noyob qobiliyatlarni",
+        "Shrot instructor sertifikatini, bu sizga butun dunyo bo'ylab bemorlar bilan ishlash imkonini beradi",
+        "O'z amaliyotingizga tatbiq etish usullarini va uni ishga tushirish bo'yicha yordam",
+        "Tajriba almashish va yordam olish mumkin bo'lgan mutaxassislar yopiq jamoasiga kirish"
+      ]
+    },
+    "EnrollNow": {
+      "title": "Qo'shilishga ulguring!",
+      "seatsLeft": "qolgan joylar: 25",
+      "days": "KUN",
+      "hours": "SOAT",
+      "minutes": "MINUT",
+      "seconds": "SEKUND"
+    },
+    "Faq": {
+      "title": "Savollarga javoblar",
+      "questions": [
+        {
+          "question": "Ishtirokchilarga qanday talablar bor?",
+          "answer": "Oliy yoki o'rta tibbiy ma'lumot - zaruriy shart."
+        },
+        {
+          "question": "Kurs qancha davom etadi?",
+          "answer": "Kurs nazariy va amaliyotni o'z ichiga olgan holda 4 hafta davom etadi."
+        },
+        {
+          "question": "Kursdan keyin yordam beriladimi?",
+          "answer": "Ha, metodik qo'llab-quvvatlash ko'rsatiladi, shuningdek, bitiruvchilar jamoasiga kirish imkoniyati mavjud."
+        }
+      ]
+    },
+    "Gallery": {
+      "title": "Galereya",
+      "button": "Ko'proq yuklash"
+    },
+    "Form": {
+      "title": "Kursimiz ishtirokchisi bo'lish uchun anketani to'ldiring",
+      "titleModal": "Kursga yozilish",
+      "fields": {
+        "name": "Isim",
+        "education": "Tibbiy ta'lim",
+        "phone": "Aloqa telefon raqami"
+      },
+      "submitButton": "So'rov yuborish",
+      "loading": "Iltimos, kuting"
+    },
+    "Modal": {
+      "success": {
+        "title": "Ariza yuborildi!",
+        "description": "Ariza muvaffaqiyatli yuborildi. <br /> Tez orada biz siz bilan bog'lanamiz"
+      },
+      "error": {
+        "title": "Nimadir xato ketdi",
+        "description": "Keyinroq qayta urinib ko'ring"
+      },
+      "ok": "Ok"
+    },
+    "Reviews": {
+      "title": "Izohlar",
+      "maria_nosachevaa": {
+        "nickname": "maria_nosachevaa",
+        "date": "16.11.2021",
+        "review": "Nihoyat topdik !!! Aynan Shrot metodidan va Aleksandr haqida yozishni boshlamoqchiman, juda bilimdon terapevt. Biz Rostov viloyatidanmiz, qizimda S shaklidagi chap tomondan bel skoliozi 3-darajasi bor edi. Shifokorlarning ko'rsatmalariga binoan biz LFK, massaj va fizioterapiya bilan muntazam shug'ullanganmiz, ammo skolioz faqat kuchaygan edi. Shrot terapiyasi haqida bilib, sertifikatlangan mutaxassisni izlashni boshladik va yaqinimizda topdik! Birinchi mashg'ulotlardan keyin natijalar ko'rinadi. Bu juda katta mehnat, Aleksandrning diqqat bilan kuzatib borishi tufayli, men aminman, biz uddalaymiz!",
+        "link": "https://www.instagram.com/scolios_clinic_krd?igsh=M2ZuMjF3bXZ0M2pu",
+        "social": "instagram"
+      },
+      "senshinanatali": {
+        "nickname": "senshinanatali",
+        "date": "16.11.2021",
+        "review": "Rahmat Aleksandr mashg'ulotlaringiz uchun, individual dastur, emotsional qo'llab-quvvatlash, natijalarga erishishdagi qat'iyat va professional kuzatib borish uchun. Natija darhol sezildi. Qizim qiyshayishni to'xtatdi, belini tik ushlab turdi va eng muhimi: bosh og'rig'i yo'qoldi!",
+        "link": "https://www.instagram.com/scolios_clinic_krd?igsh=M2ZuMjF3bXZ0M2pu",
+        "social": "instagram"
+      },
+      "_zhukova_e": {
+        "nickname": "_zhukova_e",
+        "date": "16.11.2021",
+        "review": "10 mashg'ulot o‘tdik, vaqt va pulimizdan afsuslanmaymiz, natija yaxshi tomonga ko'rindi. Aleksandrga qilgan ishi va Shrot terapiyasini o'rgatgani uchun rahmat!",
+        "link": "https://www.instagram.com/scolios_clinic_krd?igsh=M2ZuMjF3bXZ0M2pu",
+        "social": "instagram"
+      },
+      "_kidakoeva_": {
+        "nickname": "_kidakoeva_",
+        "date": "19.11.2021",
+        "review": "Aleksandr, qilgan ishlaringiz uchun katta rahmat. Menga sizni tavsiya qilishganida bejiz emas. Har bir savolimga to'liq javob berib, hamma narsani tushuntirdingiz. 10 mashg'ulotdan keyin shunday katta o'zgarishlarni ko'rish mumkin🔥 Bosh aylanishi meni bezovta qilmaydi, umumiy ahvol yaxshilandi, tashqi o'zgarishlar ko'rinmoqda... ko'p narsalarni sanab o'tish mumkin va bularning hammasi atigi 10 mashg'ulotdan keyin sodir bo'ldi. Faqat afsuslanaman, oldinroq sizga murojaat qilmaganman!!!",
+        "link": "https://www.instagram.com/scolios_clinic_krd?igsh=M2ZuMjF3bXZ0M2pu",
+        "social": "instagram"
+      },
+      "helenbelsev14": {
+        "nickname": "helenbelsev14",
+        "date": "16.11.2021",
+        "review": "Yaxshi mutaxassis jonini qo'yadi va yordam berishni xohlaydi👏",
+        "link": "https://www.instagram.com/scolios_clinic_krd?igsh=M2ZuMjF3bXZ0M2pu",
+        "social": "instagram"
+      },
+      "voycenko_aigul": {
+        "nickname": "voycenko_aigul",
+        "date": "20.11.2021",
+        "review": "Aleksandr, ishlaringiz, mehribonligingiz va e'tiboringiz uchun sizga rahmat. Bizning skolioz 3-darajali tashxisimiz bilan siz bemalol tushuntirdingizki, notekis nafas olish texnikasini o'rganib skoliozni davolash mumkin. Mashg'ulotlaringiz, Sheno korseti va nafas olish gimnastikasi tufayli mening bolamda ko'zga ko'rinadigan yaxshilanishlar bor!!! Qiyshayish darajasi kamaydi va bel ko'rinishdan to'g'ri bo'ldi!!! Mehnatingiz uchun katta rahmat! Siz bilan mashg'ulotlarni davom ettirishni xohlaymiz!!!",
+        "link": "https://www.instagram.com/scolios_clinic_krd?igsh=M2ZuMjF3bXZ0M2pu",
+        "social": "instagram"
+      },
+      "jykova2021": {
+        "nickname": "jykova2021",
+        "date": "17.11.2021",
+        "review": "Yaxshi ishlaringiz uchun rahmat, Aleksandr o'z ishini biladi, natija 10 mashg'ulotda sezildi, afsuski oldin tanishmagan ekanmiz",
+        "link": "https://www.instagram.com/scolios_clinic_krd?igsh=M2ZuMjF3bXZ0M2pu",
+        "social": "instagram"
+      },
+      "chebotarevajuliya": {
+        "nickname": "chebotarevajuliya",
+        "date": "29.11.2021",
+        "review": "Aleksandrga ushbu ajoyib metodikani Krasnodarga olib kelgani, har bir bolaga bo'lgan yondashuvi va professionalligi uchun minnatdorchilik bildirmoqchiman. Darhol ko'rinib turibdiki, odam o'z ishiga butunlay yonadi, ishiga to'liq bag'ishlaydi va bu bizga, ota-onalarga va bolalarga ishonch va optimizmni to'ldiradi. Endi, Aleksandr bilan mashg'ulotlar kursidan so'ng, men va qizim hech shubhasiz hammasi bizda muvaffaqiyatli bo'ladi va biz uddalaymiz. Katta rahmat 🌷🌷🌷",
+        "link": "https://www.instagram.com/scolios_clinic_krd?igsh=M2ZuMjF3bXZ0M2pu",
+        "social": "instagram"
+      },
+      "zalinatimova": {
+        "nickname": "zalinatimova",
+        "date": "25.11.2021",
+        "review": "Salom, men Mariitaning onasiman, u uzoq yo'lni bosib o'tdi, LFKdan boshlang, suzish 🏊, fitnes ... Hammasi yomonlashdi... Men Aleksandrga deyarli bir yil davomida diqqat bilan qaradim va qabulga qaror qildim. Birinchi uchrashuvdan Aleksandr bizni qo'llab-quvvatladi va Shrot terapiyasini aniq tushuntirdi. U juda e'tiborli, vaqt u bilan uchadi, hamma narsani batafsil tushuntiradi va natijaga tayyorlaydi. Qimmatli vaqtingizni behuda sarflamang, mutaxassis Aleksandrga murojaat qiling. Kasbiy o'sish va omad tilaymiz 👍❤️👏👏👏",
+        "link": "https://www.instagram.com/scolios_clinic_krd?igsh=M2ZuMjF3bXZ0M2pu",
+        "social": "instagram"
+      }
+    }
+  },
+  "BabySun": {
+    "title": "BabySun",
+    "subtile": "Klinikasi",
+    "description": "BabySun klinikasi bolalar salomatligiga ixtisoslashgan yetakchi tibbiyot muassasasi hisoblanadi. Biz kasalliklarni diagnostika qilish va oldini olishdan tortib, murakkab jarrohlik aralashuvlarigacha bo'lgan keng qamrovli tibbiy xizmatlarni taklif etamiz. Bizning maqsadimiz – har bir bolaga zamonaviy metodikalar va dalillarga asoslangan tibbiyotga asoslangan sifatli tibbiy yordam ko'rsatishdir.",
+    "call": "Biz bilan bog'laning",
+    "history": {
+      "title": "BabySun klinikasi",
+      "subtitle": "2023-yilda tashkil etilgan",
+      "description": "BabySun klinikasi [tashkil etilgan yil] yilda bolalar uchun ixtisoslashtirilgan tibbiyot muassasasini yaratish maqsadida tashkil etilgan. Shu yili klinikaning birinchi markazi ochilib, bolalar kasalliklarini davolash va oldini olish xizmatlarini taklif qila boshladi.",
+      "licenses": "Litsenziyalar"
+    }
+  },
+  "request": "Yozilish"
 }

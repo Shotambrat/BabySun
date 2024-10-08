@@ -9,6 +9,7 @@ import {
 } from "@/components/ui";
 import { X } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl"; // Подключаем локализацию
 
 interface Props {
   status: "error" | "success";
@@ -17,6 +18,8 @@ interface Props {
 }
 
 export const Response = ({ status, onClose, className }: Props) => {
+  const t = useTranslations("Main.Modal"); // Подключаемся к разделу "Modal" для локализации
+
   return (
     <div className={cn(className)}>
       <Dialog open>
@@ -44,22 +47,22 @@ export const Response = ({ status, onClose, className }: Props) => {
                 status == "success" ? "" : "max-mdx:mt-8"
               }`}
             >
-              {status == "success"
-                ? "Заявка отправлена!"
-                : "Что-то пошло не так"}
+              {t(`${status}.title`)} {/* Динамический заголовок */}
             </DialogTitle>
-            <DialogDescription className="text-lg text-center leading-6 ">
+            <DialogDescription className="text-lg text-center leading-6">
               {status == "success" ? (
-                <p>
-                  Заявка успешно отправлена. <br /> В скором времени мы свяжемся
-                  с вами
-                </p>
+                <p dangerouslySetInnerHTML={{ __html: t("success.description") }} /> 
               ) : (
-                "Повторите попытку позже"
+                t("error.description")
               )}
             </DialogDescription>
           </div>
-          <Button onClick={onClose} className="text-lg rounded-full px-24 py-3 max-mdx:py-5">Ок</Button>
+          <Button
+            onClick={onClose}
+            className="text-lg rounded-full px-24 py-3 max-mdx:py-5"
+          >
+            {t("ok")} {/* Текст кнопки */}
+          </Button>
         </DialogContent>
       </Dialog>
     </div>

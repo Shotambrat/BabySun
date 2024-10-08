@@ -5,6 +5,7 @@ import { Button } from '@/components/ui';
 import Image from 'next/image';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   className?: string;
@@ -17,13 +18,10 @@ const photos = [
   { src: "/images/main/gallery/image (1).png", alt: "Gallery Image 4" },
   { src: "/images/main/gallery/image (2).png", alt: "Gallery Image 5" },
   { src: "/images/main/gallery/image (3).png", alt: "Gallery Image 6" },
-  { src: "/images/main/gallery/image (4).png", alt: "Gallery Image 7" },
-  { src: "/images/main/gallery/image (5).png", alt: "Gallery Image 8" },
-  { src: "/images/main/gallery/image (6).png", alt: "Gallery Image 9" },
-  { src: "/images/main/gallery/image (7).png", alt: "Gallery Image 10" },
 ];
 
 export const Gallery = ({ className }: Props) => {
+  const t = useTranslations('Main.Gallery')
   const [visiblePhotos, setVisiblePhotos] = useState(6); // Show 6 photos by default on desktop
   const [isMobile, setIsMobile] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false); // Track if "Load More" was clicked
@@ -52,7 +50,7 @@ export const Gallery = ({ className }: Props) => {
   return (
     <section id="gallery" className={cn("bg-white py-24", className)}>
       <div className="w-full max-w-[1500px] mx-auto px-4 flex flex-col gap-8">
-        <h3 className="text-3xl lg:text-4xl font-bold">Галерея</h3>
+        <h3 className="text-3xl lg:text-4xl font-bold">{t('title')}</h3>
         <PhotoProvider>
           <div
             className={cn(
@@ -77,7 +75,7 @@ export const Gallery = ({ className }: Props) => {
         {visiblePhotos < photos.length && (
           <div className="w-full flex items-center justify-center">
             <Button onClick={handleLoadMore} className="px-8 py-4 rounded-full">
-              Загрузить еще
+            {t('button')}
             </Button>
           </div>
         )}

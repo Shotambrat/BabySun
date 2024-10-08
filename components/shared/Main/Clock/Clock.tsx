@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { cn } from "@lib/utils";
 import { Request } from "../../Request/Request";
+import { useTranslations } from "next-intl"; // Подключаем хук для локализации
 
 interface Props {
   className?: string;
@@ -32,6 +33,7 @@ const calculateTimeLeft = () => {
 };
 
 export const Clock = ({ className }: Props) => {
+  const t = useTranslations("Main.EnrollNow"); // Подключаемся к разделу "EnrollNow" в локализации
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   // Update the timer every second
@@ -48,8 +50,8 @@ export const Clock = ({ className }: Props) => {
       <div className="w-full max-w-[1500px] px-4 mx-auto flex flex-col items-center gap-12">
         {/* Top Section */}
         <div className="flex flex-col w-full gap-6">
-          <p className="text-xl lg:text-2xl">осталось мест: 9</p>
-          <h4 className="text-3xl lg:text-5xl font-bold">Успейте присоединиться!</h4>
+          <p className="text-xl lg:text-2xl">{t("seatsLeft", { seats: 9 })}</p>
+          <h4 className="text-3xl lg:text-5xl font-bold">{t("title")}</h4>
           <Request className="bg-white hover:bg-white text-[#009FE3]" />
         </div>
         {/* Line */}
@@ -65,15 +67,15 @@ export const Clock = ({ className }: Props) => {
                 <div
                   key={`day-${i}`}
                   className="md:text-6xl text-3xl lg:text-[120px] leading-none"
-                  style={{ fontFamily: "'Roboto', sans-serif" }} // Adjusted to Roboto or similar font as per the image
+                  style={{ fontFamily: "'Roboto', sans-serif" }}
                 >
                   {digit}
                 </div>
               ))}
             </div>
-            <span className="text-lg lg:text-2xl mt-2">ДНИ</span>
+            <span className="text-lg lg:text-2xl mt-2">{t("days")}</span>
           </div>
-          <span className="md:text-6xl text-3xl lg:text-[120px]  leading-none">:</span>
+          <span className="md:text-6xl text-3xl lg:text-[120px] leading-none">:</span>
           {/* Hours */}
           <div className="flex flex-col items-center">
             <div className="flex gap-1">
@@ -81,15 +83,15 @@ export const Clock = ({ className }: Props) => {
                 <div
                   key={`hour-${i}`}
                   className="md:text-6xl text-3xl lg:text-[120px] leading-none"
-                  style={{ fontFamily: "'Roboto', sans-serif" }} // Adjusted to Roboto or similar font as per the image
+                  style={{ fontFamily: "'Roboto', sans-serif" }}
                 >
                   {digit}
                 </div>
               ))}
             </div>
-            <span className="text-lg lg:text-2xl mt-2">ЧАСЫ</span>
+            <span className="text-lg lg:text-2xl mt-2">{t("hours")}</span>
           </div>
-          <span className="md:text-6xl text-3xl lg:text-[120px]  leading-none">:</span>
+          <span className="md:text-6xl text-3xl lg:text-[120px] leading-none">:</span>
           {/* Minutes */}
           <div className="flex flex-col items-center">
             <div className="flex gap-1">
@@ -97,13 +99,13 @@ export const Clock = ({ className }: Props) => {
                 <div
                   key={`minute-${i}`}
                   className="md:text-6xl text-3xl lg:text-[120px] leading-none"
-                  style={{ fontFamily: "'Roboto', sans-serif" }} // Adjusted to Roboto or similar font as per the image
+                  style={{ fontFamily: "'Roboto', sans-serif" }}
                 >
                   {digit}
                 </div>
               ))}
             </div>
-            <span className="text-lg lg:text-2xl mt-2">МИНУТЫ</span>
+            <span className="text-lg lg:text-2xl mt-2">{t("minutes")}</span>
           </div>
           <span className="md:text-6xl text-3xl lg:text-[120px] leading-none">:</span>
           {/* Seconds */}
@@ -113,13 +115,13 @@ export const Clock = ({ className }: Props) => {
                 <div
                   key={`second-${i}`}
                   className="md:text-6xl text-3xl lg:text-[120px] leading-none"
-                  style={{ fontFamily: "'Roboto', sans-serif" }} // Adjusted to Roboto or similar font as per the image
+                  style={{ fontFamily: "'Roboto', sans-serif" }}
                 >
                   {digit}
                 </div>
               ))}
             </div>
-            <span className="text-lg lg:text-2xl mt-2">СЕКУНДЫ</span>
+            <span className="text-lg lg:text-2xl mt-2">{t("seconds")}</span>
           </div>
         </div>
       </div>

@@ -2,24 +2,25 @@ import React from "react";
 import { cn } from "@lib/utils";
 import { Request } from "../../Request/Request";
 import Image from "next/image";
+import { useTranslations } from "next-intl"; // Подключаем локализацию
 
 interface Props {
   className?: string;
 }
 
 export const Benefit = ({ className }: Props) => {
+  const t = useTranslations("Main.WhatYouGet"); // Подключаемся к разделу "WhatYouGet" из локализации
+
   return (
     <div className={cn("bg-white py-24", className)}>
       <div className="w-full px-4 max-w-[1500px] mx-auto space-y-8">
-        <h3 className="text-3xl lg:text-4xl font-bold">Что вы получите</h3>
+        <h3 className="text-3xl lg:text-4xl font-bold">{t("title")}</h3>
         <div className="grid grid-cols-1 lgx:grid-cols-2 gap-4">
           <div className="h-[450px] lg:h-[300px] lgx:h-[400px] overflow-hidden p-8 bg-[#F8FBFF] rounded-3xl relative">
             <p className="text-2xl w-full max-w-[400px] font-semibold">
-              Уникальные навыки, признанные на международном уровне
+              {t("points.0")}
             </p>
-            {/* Background shadow effect */}
             <div className="icon-background"></div>
-            {/* Icon image */}
             <Image
               src={"/images/main/benefit/benefit-icon.svg"}
               width={1000}
@@ -31,11 +32,9 @@ export const Benefit = ({ className }: Props) => {
           </div>
           <div className="h-[500px] lg:h-[300px] lgx:h-[400px] overflow-hidden p-8 bg-[#F8FBFF] rounded-3xl relative">
             <p className="text-2xl w-full max-w-[400px] font-semibold">
-            Сертификат инструктора Шрот, который позволит вам работать с пациентами по всему миру
+              {t("points.1")}
             </p>
-            {/* Background shadow effect */}
             <div className="icon-background"></div>
-            {/* Icon image */}
             <Image
               src={"/images/main/benefit/benefit-icon-1.svg"}
               width={1000}
@@ -47,11 +46,9 @@ export const Benefit = ({ className }: Props) => {
           </div>
           <div className="h-[460px] lg:h-[300px] lgx:h-[400px] overflow-hidden p-8 bg-[#F8FBFF] rounded-3xl relative">
             <p className="text-2xl w-full max-w-[400px] font-semibold">
-            Методики для внедрения в собственную практику и помощь в её запуске
+              {t("points.2")}
             </p>
-            {/* Background shadow effect */}
             <div className="icon-background"></div>
-            {/* Icon image */}
             <Image
               src={"/images/main/benefit/benefit-icon-2.svg"}
               width={1000}
@@ -63,11 +60,9 @@ export const Benefit = ({ className }: Props) => {
           </div>
           <div className="h-[500px] lg:h-[300px] lgx:h-[400px] overflow-hidden p-8 bg-[#F8FBFF] rounded-3xl relative">
             <p className="text-2xl w-full max-w-[400px] font-semibold">
-            Доступ к закрытому сообществу специалистов, где вы сможете обмениваться опытом и получать поддержку
+              {t("points.3")}
             </p>
-            {/* Background shadow effect */}
             <div className="icon-background"></div>
-            {/* Icon image */}
             <Image
               src={"/images/main/benefit/benefit-icon-3.svg"}
               width={1000}

@@ -3,12 +3,15 @@ import { cn } from "@lib/utils";
 import { Button } from "@/components/ui";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
+import { useTranslations } from "next-intl"; // Импортируем хук для локализации
 
 interface Props {
   className?: string;
 }
 
 export const Perhun = ({ className }: Props) => {
+  const t = useTranslations("Main.Instructor"); // Подключаем локализацию для раздела "Instructor"
+
   return (
     <section id="teachers" className={cn("bg-white py-24", className)}>
       <div className="w-full max-w-[1500px] px-4 mx-auto flex justify-center gap-8 max-lgx:flex-col">
@@ -26,23 +29,18 @@ export const Perhun = ({ className }: Props) => {
           <h2
             className="text-4xl mdx:text-5xl font-bold text-black lineHeight30"
             style={{ lineHeight: "60px" }}
-            // Inline style for max screen width of 650px
           >
-            Александр <br /> Перхун
+            {t("name").split(" ")[0]} <br /> {t("name").split(" ")[1]} {/* Разбиваем имя на две строки */}
           </h2>
           <p className="text-xl font-medium w-full max-w-[400px]">
-            Сертифицированный инструктор PSSE (Schroth Method by Nikos
-            Karavidas), физический терапевт и основатель &quot;Scolios clinic&quot; в
-            Краснодаре. Его центр является крупнейшим на юге России и
-            специализируется на лечении сколиоза с использованием уникальной
-            методики Шрот
+            {t("description")} {/* Описание берем из локализации */}
           </p>
           <div>
             <Link
               href="https://yandex.ru/video/preview/4503682067895474518"
             >
               <Button className="rounded-full px-8 py-4">
-                Смотреть интервью
+                {t("button")} {/* Кнопка тоже из локализации */}
               </Button>
             </Link>
           </div>

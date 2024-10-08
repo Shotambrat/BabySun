@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import axios from "axios";
 import { Response } from "../Request/Response";
 import { cn } from "@lib/utils";
+import { useTranslations } from "next-intl";
 
 interface Props {
   className?: string;
@@ -12,6 +13,7 @@ interface Props {
 }
 
 export const FooterReq = ({ className }: Props) => {
+    const t = useTranslations("Main.Form")
   const [isLoading, setIsLoading] = useState(false);
   const [responseStatus, setResponseStatus] = useState<
     "success" | "error" | null
@@ -56,21 +58,21 @@ export const FooterReq = ({ className }: Props) => {
           <div className="space-y-4 mt-4">
             <Input
               name="name"
-              placeholder="Имя"
+              placeholder={t("fields.name")}
               className="py-6 px-3 bg-[#F8F8F8] text-black font-semibold text-lg rounded-2xl"
               onChange={handleInputChange}
               value={formData.name}
             />
             <Input
               name="phone"
-              placeholder="Контактный телефон"
+              placeholder={t("fields.phone")}
               className="py-6 px-3 bg-[#F8F8F8] text-black font-semibold text-lg rounded-md"
               onChange={handleInputChange}
               value={formData.phone}
             />
             <Input
               name="edu"
-              placeholder="Медицинское образование"
+              placeholder={t("fields.education")}
               className="py-6 px-3 bg-[#F8F8F8] text-black font-semibold text-lg rounded-md"
               onChange={handleInputChange}
               value={formData.edu}
@@ -88,11 +90,11 @@ export const FooterReq = ({ className }: Props) => {
                 <div className="flex items-center space-x-2">
                   <Loader2 className="animate-spin" size={25} />{" "}
                   {/* Иконка с анимацией вращения */}
-                  <span>Ждите, пожалуйста</span>
+                  <span>{t('loading')}</span>
                 </div>
-              ) : (
-                "Отправить заявку"
-              )}
+              ) : `${t("submitButton")}`
+                
+              }
             </button>
           </div>
         </div>

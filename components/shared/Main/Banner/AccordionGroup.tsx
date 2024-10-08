@@ -13,13 +13,15 @@ import {
   DialogTitle,
 } from "@/components/ui";
 import { Request } from "../../Request/Request";
-import { cn } from '@lib/utils';
+import { cn } from "@lib/utils";
+import { useTranslations } from "next-intl";
 
 interface Props {
   className?: string;
 }
 
 export const AccordionGroup = ({ className }: Props) => {
+  const t = useTranslations("");
   const radiusRef = useRef<HTMLDivElement | null>(null);
   const [radius, setRadius] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -35,27 +37,25 @@ export const AccordionGroup = ({ className }: Props) => {
   // Позиции для каждого элемента на дуге
   const items = [
     {
-      title: "Помощь в начале практики",
-      description: "Мы предоставляем участникам поддержку в начале их практики, включая методологические рекомендации и примеры работы с пациентами.",
+      title: t("Main.Banner.Accordions.title1"),
+      description: t("Main.Banner.Accordions.description1"),
       angle: 30,
     },
     {
-      title: "Преподаватель международного уровня",
-      description:
-        "Обучение проводится Александром Перхуном, первым сертифицированным инструктором PSSE в России, признанным на международной арене. Его глубокие знания и опыт позволяют эффективно передавать технику Шрот.",
+      title: t("Main.Banner.Accordions.title2"),
+      description: t("Main.Banner.Accordions.description2"),
       angle: 60,
     },
     {
-      title: "Сертификат по ШРОТ-терапии",
-      description: "По окончании курса вы получите международный сертификат, подтверждающий квалификацию, что позволит вам работать с пациентами по этой методике.",
+      title: t("Main.Banner.Accordions.title4"),
+      description: t("Main.Banner.Accordions.description4"),
       angle: 150,
     },
     {
-      title: "Уникальная методика лечения сколиоза и кифоза",
-      description: "Курс предлагает углубленное изучение метода Шрот, который доказал свою эффективность в коррекции сколиоза и кифоза. Эта техника основана на индивидуальных упражнениях, направленных на выравнивание позвоночника, восстановление дыхания и улучшение осанки.",
+      title: t("Main.Banner.Accordions.title3"),
+      description: t("Main.Banner.Accordions.description3"),
       angle: 120,
     },
-
   ];
 
   return (
@@ -101,9 +101,9 @@ export const AccordionGroup = ({ className }: Props) => {
                 className="pl-1 smx:basis-1/2 lg:basis-1/3"
               >
                 {/* Обернем карточку в DialogTrigger */}
-                <Dialog >
+                <Dialog>
                   <DialogTrigger asChild>
-                    <div  className="p-4 rounded-2xl relative bg-white shadow-custom mx-1 cursor-pointer">
+                    <div className="p-4 rounded-2xl relative bg-white shadow-custom mx-1 cursor-pointer">
                       <h2
                         className="text-[#009FE3] text-sm font-semibold w-full max-w-[90%]"
                         style={{ lineHeight: "16px" }}
@@ -131,7 +131,9 @@ export const AccordionGroup = ({ className }: Props) => {
                   <DialogContent className="space-y-4">
                     <DialogHeader className="space-y-4">
                       <DialogTitle>
-                        <h2 className="w-full text-3xl font-semibold leading-8 ">{elem.title}</h2>
+                        <h2 className="w-full text-3xl font-semibold leading-8 ">
+                          {elem.title}
+                        </h2>
 
                         {/* <button
                           className="absolute top-4 right-4"
@@ -142,9 +144,14 @@ export const AccordionGroup = ({ className }: Props) => {
                         </button> */}
                       </DialogTitle>
 
-                      <DialogDescription className="text-xl">{elem.description}</DialogDescription>
+                      <DialogDescription className="text-xl">
+                        {elem.description}
+                      </DialogDescription>
                     </DialogHeader>
-                    <Request className="w-full py-4 text-xl" title="Отправить заявку" />
+                    <Request
+                      className="w-full py-4 text-xl"
+                      title="Отправить заявку"
+                    />
                   </DialogContent>
                 </Dialog>
               </CarouselItem>
