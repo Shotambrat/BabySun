@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { Header } from "@/components/shared/Header";
+import Script from 'next/script';
 import { Footer } from "@/components/shared/Footer/Footer";
 import "./globals.css";
 
@@ -106,6 +107,23 @@ export default async function RootLayout({
       <body className={`${raleway.variable} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
+          <Script
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '2782829515227347'); 
+                fbq('track', 'Lead');
+              `,
+            }}
+          />
           {children}
           <Footer />
         </NextIntlClientProvider>
