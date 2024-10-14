@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { cn } from "@lib/utils";
 import Image from "next/image";
@@ -13,19 +14,22 @@ export const AboutBS = ({ className }: Props) => {
 
   return (
     <div
-      className={cn("w-full py-24 relative bg-white flex max-lgx:flex-col lgx:items-center", className)}
+      className={cn(
+        "w-full py-24 relative bg-white flex max-lgx:flex-col lgx:items-center",
+        className
+      )}
     >
       <div className="w-full max-lgx:hidden flex">
         <div className="relative flex-1">
           <Image
-            src={'/svg/main/bs/down-circles.svg'}
+            src={"/svg/main/bs/down-circles.svg"}
             width={200}
             height={200}
             alt="Cilcles Neon"
             className="h-8 w-auto absolute top-0 left-0"
           />
           <Image
-            src={'/svg/main/bs/up-circles.svg'}
+            src={"/svg/main/bs/up-circles.svg"}
             width={200}
             height={200}
             alt="Cilcles Neon"
@@ -45,18 +49,19 @@ export const AboutBS = ({ className }: Props) => {
       </div>
       <div className="absolute max-lgx:relative w-full max-w-[1550px] h-full left-1/2 transform -translate-x-1/2 px-4">
         <div className="space-y-6 w-full max-w-[500px]">
-            <h2 className="text-5xl font-bold max-mdx:mb-12">
-                {t('org')}
-            </h2>
+          <h2 className="text-5xl font-bold max-mdx:mb-12">{t("org")}</h2>
           <h1 className="text-5xl font-bold">
             {t("title")} <span className="text-[#009FE3]">{t("subtile")}</span>
           </h1>
-          <p className="text-lg leading-6 font-medium">
-            {t("description")}
-          </p>
+          <p className="text-lg leading-6 font-medium">{t("description")}</p>
           <div>
             <a href="tel:+998 99 890 93 88">
-              <Button className="text-xl rounded-full px-8 py-4 bg-[#009FE3] text-white">
+              <Button
+                onClick={() =>
+                  fetch("https://baby-sun.uz/api/count/perxun?button=instagram")
+                }
+                className="text-xl rounded-full px-8 py-4 bg-[#009FE3] text-white"
+              >
                 {t("call")}
               </Button>
             </a>
@@ -65,7 +70,7 @@ export const AboutBS = ({ className }: Props) => {
       </div>
       <div className="lgx:hidden px-4 mt-8">
         <Image
-          src={'/images/main/bs/about.jfif'}
+          src={"/images/main/bs/about.jfif"}
           width={1000}
           height={1000}
           alt="About Mobile photo"
