@@ -90,8 +90,8 @@ export default async function RootLayout({
         <meta name="author" content="Baby sun" />
         <link rel="canonical" href={canonicalUrl} />
         {/* Open Graph (OG) теги */}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
+        <meta property="og:title" content={'Baby-sun'} />
+        <meta property="og:description" content={'ШРОТ-терпия'} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={imageUrl} />
