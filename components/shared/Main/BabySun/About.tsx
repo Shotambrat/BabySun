@@ -59,6 +59,7 @@ export const AboutBS = ({ className }: Props) => {
               <Button
                 onClick={() =>
                   fetch("https://baby-sun.uz/api/count/perxun?button=call", {
+                    method: "POST",
                     headers: {
                       "API-Key":
                         "aFE~&#siAhCs9_Ni]AoC)HMF#y0V)!-kIh0h-3.eR0_W.gA~gk", // Place your actual API Key here
