@@ -22,7 +22,12 @@ export const Footer = ({ className }: Props) => {
             <hr />
             <a
               onClick={() =>
-                fetch("https://baby-sun.uz/api/count/perxun?button=instagram")
+                fetch("https://baby-sun.uz/api/count/perxun?button=instagram", {
+                  headers: {
+                    "API-Key":
+                      "aFE~&#siAhCs9_Ni]AoC)HMF#y0V)!-kIh0h-3.eR0_W.gA~gk", // Place your actual API Key here
+                  },
+                })
               }
               className="flex max-mdx:hidden gap-4 items-center"
               target="_blank"
@@ -45,7 +50,11 @@ export const Footer = ({ className }: Props) => {
         </div>
         <a
           onClick={() =>
-            fetch("https://baby-sun.uz/api/count/perxun?button=instagram")
+            fetch("https://baby-sun.uz/api/count/perxun?button=instagram", {
+              headers: {
+                "API-Key": "aFE~&#siAhCs9_Ni]AoC)HMF#y0V)!-kIh0h-3.eR0_W.gA~gk", // Place your actual API Key here
+              },
+            })
           }
           className="flex mdx:hidden gap-4 items-center"
           target="_blank"

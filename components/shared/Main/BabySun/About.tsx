@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { cn } from "@lib/utils";
 import Image from "next/image";
@@ -58,7 +58,12 @@ export const AboutBS = ({ className }: Props) => {
             <a href="tel:+998 99 890 93 88">
               <Button
                 onClick={() =>
-                  fetch("https://baby-sun.uz/api/count/perxun?button=call")
+                  fetch("https://baby-sun.uz/api/count/perxun?button=call", {
+                    headers: {
+                      "API-Key":
+                        "aFE~&#siAhCs9_Ni]AoC)HMF#y0V)!-kIh0h-3.eR0_W.gA~gk", // Place your actual API Key here
+                    },
+                  })
                 }
                 className="text-xl rounded-full px-8 py-4 bg-[#009FE3] text-white"
               >
