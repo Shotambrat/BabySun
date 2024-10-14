@@ -29,7 +29,7 @@ export const FooterReq = ({ className }: Props) => {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "https://baby-sun.uz/api/application",
+        "https://baby-sun.uz/api/application/perxun",
         formData,
         {
           headers: {
