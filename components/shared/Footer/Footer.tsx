@@ -25,6 +25,7 @@ export const Footer = ({ className }: Props) => {
                 fetch("https://baby-sun.uz/api/count/perxun?button=instagram")
               }
               className="flex max-mdx:hidden gap-4 items-center"
+              target="_blank"
               href={"https://www.instagram.com/babysun_nat_bolalarklinikasi/"}
             >
               <Image
@@ -47,6 +48,7 @@ export const Footer = ({ className }: Props) => {
             fetch("https://baby-sun.uz/api/count/perxun?button=instagram")
           }
           className="flex mdx:hidden gap-4 items-center"
+          target="_blank"
           href={"https://www.instagram.com/babysun_nat_bolalarklinikasi/"}
         >
           <Image
