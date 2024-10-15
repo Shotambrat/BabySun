@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const FooterReq = ({ className }: Props) => {
-    const t = useTranslations("Main.Form")
+  const t = useTranslations("Main.Form");
   const [isLoading, setIsLoading] = useState(false);
   const [responseStatus, setResponseStatus] = useState<
     "success" | "error" | null
@@ -90,13 +90,25 @@ export const FooterReq = ({ className }: Props) => {
                 <div className="flex items-center space-x-2">
                   <Loader2 className="animate-spin" size={25} />{" "}
                   {/* Иконка с анимацией вращения */}
-                  <span>{t('loading')}</span>
+                  <span>{t("loading")}</span>
                 </div>
-              ) : `${t("submitButton")}`
-                
-              }
+              ) : (
+                `${t("submitButton")}`
+              )}
             </button>
-            <a href="tel:+998777026688" className="rounded-full text-center max-mdx:w-full px-8 py-4 cursor-pointer text-lg text-white border transition-all duration-150 hover:bg-white hover:text-[#009FE3] font-semibold">
+            <a
+              onClick={() =>
+                fetch("https://baby-sun.uz/api/count/perxun?button=call", {
+                  method: "POST",
+                  headers: {
+                    "API-Key":
+                      "aFE~&#siAhCs9_Ni]AoC)HMF#y0V)!-kIh0h-3.eR0_W.gA~gk", // Place your actual API Key here
+                  },
+                })
+              }
+              href="tel:+998777026688"
+              className="rounded-full text-center max-mdx:w-full px-8 py-4 cursor-pointer text-lg text-white border transition-all duration-150 hover:bg-white hover:text-[#009FE3] font-semibold"
+            >
               Позвонить
             </a>
           </div>
