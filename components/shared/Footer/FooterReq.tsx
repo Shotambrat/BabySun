@@ -80,7 +80,7 @@ export const FooterReq = ({ className }: Props) => {
           </div>
 
           {/* Лоадер и кнопка отправки */}
-          <div className="mt-12">
+          <div className="mt-12 flex w-full max-mdx:flex-col justify-between gap-2">
             <button
               className="rounded-full max-mdx:w-full px-8 py-4 text-lg bg-white text-[#009FE3] font-semibold"
               onClick={handleSubmit}
@@ -96,6 +96,9 @@ export const FooterReq = ({ className }: Props) => {
                 
               }
             </button>
+            <a href="tel:+998777026688" className="rounded-full text-center max-mdx:w-full px-8 py-4 cursor-pointer text-lg text-white border transition-all duration-150 hover:bg-white hover:text-[#009FE3] font-semibold">
+              Позвонить
+            </a>
           </div>
         </div>
       </div>

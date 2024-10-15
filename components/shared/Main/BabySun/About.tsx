@@ -55,7 +55,7 @@ export const AboutBS = ({ className }: Props) => {
           </h1>
           <p className="text-lg leading-6 font-medium">{t("description")}</p>
           <div>
-            <a href="tel:+998 99 890 93 88">
+            <a href="tel:+998777026688">
               <Button
                 onClick={() =>
                   fetch("https://baby-sun.uz/api/count/perxun?button=call", {
