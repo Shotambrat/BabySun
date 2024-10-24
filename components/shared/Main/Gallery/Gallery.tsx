@@ -52,7 +52,7 @@ const VideoComponent = () => {
           controls
           preload="none"
           poster="/images/perhun/shrot.png"
-          className="w-full h-full max-h-[308px] rounded-3xl object-cover"
+          className="w-full h-full max-h-[308px] rounded-3xl"
         >
           <source
             src="https://shotambrat.github.io/cdndelivery/assets/IMG_2315.MP4"
