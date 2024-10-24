@@ -17,7 +17,7 @@ const photos = [
   { src: "/images/main/gallery/image.png", alt: "Gallery Image 3" },
   { src: "/images/main/gallery/image (1).png", alt: "Gallery Image 4" },
   { src: "/images/main/gallery/image (2).png", alt: "Gallery Image 5" },
-  { src: "/images/main/gallery/image (3).png", alt: "Gallery Image 6" },
+  // { src: "/images/main/gallery/image (3).png", alt: "Gallery Image 6" },
 ];
 
 const VideoComponent = () => {
@@ -67,33 +67,18 @@ const VideoComponent = () => {
 
 export const Gallery = ({ className }: Props) => {
   const t = useTranslations("Main.Gallery");
-  const [visiblePhotos, setVisiblePhotos] = useState(6); // Show 6 photos by default on desktop
-  const [isMobile, setIsMobile] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false); // Track if gallery is expanded
-
-  useEffect(() => {
-    const updateMedia = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    updateMedia();
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
-  }, []);
-
-  useEffect(() => {
-    // Adjust initial visible photos based on mobile or desktop
-    setVisiblePhotos(isMobile ? 3 : 6);
-  }, [isMobile]);
+  const [visiblePhotos, setVisiblePhotos] = useState(6); // Показывать 6 фото на десктопе
+  const [isExpanded, setIsExpanded] = useState(false); // Отслеживать состояние галереи
 
   const handleToggleGallery = () => {
     if (isExpanded) {
-      // Collapse the gallery
+      // Свернуть галерею
       setIsExpanded(false);
-      setVisiblePhotos(isMobile ? 3 : 6);
+      setVisiblePhotos(6); // Показать только 6 фото при сворачивании
     } else {
-      // Expand the gallery
+      // Развернуть галерею
       setIsExpanded(true);
-      setVisiblePhotos(photos.length); // Show all photos
+      setVisiblePhotos(photos.length); // Показать все фото
     }
   };
 
@@ -104,15 +89,10 @@ export const Gallery = ({ className }: Props) => {
         <PhotoProvider>
           <div
             className={cn(
-              "grid grid-cols-1 mdx:grid-cols-2 lgx:grid-cols-3 gap-4 transition-all duration-300",
-              isExpanded
-                ? "max-h-full"
-                : isMobile
-                ? "max-h-[800px]"
-                : "max-h-[1200px]" // Dynamic height based on expanded state
+              "grid grid-cols-1 mdx:grid-cols-2 lgx:grid-cols-3 gap-4 transition-all duration-300"
             )}
           >
-                <VideoComponent />
+            <VideoComponent />
             {photos.slice(0, visiblePhotos).map((photo, index) => (
               <PhotoView key={index} src={photo.src}>
                 <Image
